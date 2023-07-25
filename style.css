@@ -3,7 +3,7 @@ body {
     font-family: 'Jost', sans-serif !important;
 }
 
-body:not(#nav) {
+.pad {
     padding: 10px;
 }
 
@@ -35,6 +35,6 @@ body:not(#nav) {
     background-color: #dddddd;
   }
   
-  .active {
+  #active {
     background-color: #eeeeee;
   }
