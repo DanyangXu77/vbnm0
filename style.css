@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Jost&display=swap');
 body {
     font-family: 'Jost', sans-serif !important;
+}
+
+body:not(#nav) {
     padding: 10px;
 }
+
 #nav {
     margin: 0;
     list-style-type: none;
