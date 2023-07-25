@@ -2,7 +2,7 @@
 body {
     font-family: 'Jost', sans-serif !important;
 }
-.nav {
+#nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
