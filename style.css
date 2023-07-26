@@ -36,7 +36,11 @@ li a {
     padding: 10px 10px;
     text-decoration: none;
 }
-  
+
+.l {
+    color: #aaaaff;
+}
+
 li a:hover:not(#active) {
     background-color: #222222;
 }
