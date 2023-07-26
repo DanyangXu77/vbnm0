@@ -13,38 +13,32 @@ body {
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-}
-
-#nav {
-    margin: 0;
     list-style-type: none;
+    margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #eeeeee;
     position: fixed;
     top: 0;
     width: 100%;
-  }
+}
   
-  li {
+li {
     float: left;
-  }
+}
   
-  li a {
-    margin: 0;
+li a {
     display: block;
-    color: #000000;
+    color: white;
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
-  }
+}
   
-  li a:hover:not(#active) {
+li a:hover:not(.active) {
     background-color: #dddddd;
-  }
+}
   
-  #active {
+.active {
     background-color: #cccccc;
-  }
+}
