@@ -2,7 +2,7 @@
 body {
     font-family: 'Jost', sans-serif !important;
     margin: 0;
-    color: #000000;
+    color: #ffffff;
     background-color: #444444;
 }
 
@@ -37,10 +37,10 @@ li a {
     text-decoration: none;
 }
   
-li a:hover:not(.active) {
-    background-color: #333333;
+li a:hover:not(#active) {
+    background-color: #222222;
 }
   
-.active {
-    background-color: #222222;
+#active {
+    background-color: #333333;
 }
