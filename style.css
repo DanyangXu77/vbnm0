@@ -3,6 +3,7 @@ body {
     font-family: 'Jost', sans-serif !important;
     margin: 0;
     color: #000000;
+    background-color: #444444;
 }
 
 .mar {
@@ -18,7 +19,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #eeeeee;
+    background-color: #111111;
     position: fixed;
     top: 0;
     width: 100%;
@@ -30,15 +31,15 @@ li {
   
 li a {
     display: block;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
     padding: 10px 10px;
 }
   
 li a:hover:not(.active) {
-    background-color: #dddddd;
+    background-color: #333333;
 }
   
 .active {
-    background-color: #cccccc;
+    background-color: #222222;
 }
