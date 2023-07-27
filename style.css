@@ -28,6 +28,10 @@ ul {
 li {
     float: left;
 }
+
+.r {
+    float: right;
+}
   
 li a {
     display: block;
