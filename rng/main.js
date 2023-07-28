@@ -1,6 +1,6 @@
-function myFunction(a) {
-    var copyText = document.getElementById(a);
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
+function roll() {
+    let d = document.getElementById("dice");
+    let x = Math.floor(Math.random() * 6 + 1);
+    let s = "https://www.vbnm.dev/images/dice/" + x + ".png";
+    d.src = s;
 }
