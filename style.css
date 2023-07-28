@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 body {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Jost', sans-serif !important;
     margin: 0;
     color: #ffffff;
     background-color: #444444;
@@ -17,7 +17,7 @@ body {
 }
 
 .cblock {
-    font-family: 'Source Code Pro';
+    font-family: 'Source Code Pro' !important;
 }
 
 ul {
