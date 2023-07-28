@@ -7,9 +7,3 @@ function roll() {
     t.innerHTML = x;
     return x;
 }
-
-function rollc() {
-    for (i = 0; i < 5; i++) {
-        roll();
-    }
-}
