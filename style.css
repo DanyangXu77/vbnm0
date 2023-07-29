@@ -72,3 +72,7 @@ li a:hover:not(#active) {
     color: #ffffff;
     border: 2px inset #222222;   
 }
+
+.imp {
+    color: #ff0000;
+}
