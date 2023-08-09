@@ -88,3 +88,8 @@ li a:hover:not(#active) {
 .imp {
     color: #ff0000;
 }
+
+.cardDeck {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
