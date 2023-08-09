@@ -28,6 +28,7 @@ function reset() {
     topCard.innerHTML = "Unknown<br>54 Remaining";
     updateDeck();
     console.log("Reset");
+    console.log(cards);
 }
 
 function shuffle() {
@@ -41,12 +42,14 @@ function shuffle() {
         cards[i] = t;
     }
     console.log("Shuffled");
+    console.log(cards);
 }
 
 function addDeck() {
     cards = cards.concat(oneDeck);
     updateDeck();
     console.log("Deck Added");
+    console.log(cards);
 }
 
 function draw() {
@@ -59,6 +62,7 @@ function draw() {
     topCard.innerHTML = cardName(card);
     updateDeck();
     console.log("Drawn");
+    console.log(cards);
     return 1;
 }
 
