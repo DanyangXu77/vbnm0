@@ -27,6 +27,7 @@ function roll() {
     let s = "/images/dice/" + x + ".png";
     d.src = s;
     debug_log("Rolled");
+    debug_log(x);
     debug_log(rolls);
 }
 
@@ -41,6 +42,8 @@ function openSettings() {
 function closeSettings() {
     settings.hidden = true;
 }
+
+settings.onscroll = function() {return;};
 
 function reset() {
     cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
