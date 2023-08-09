@@ -7,12 +7,10 @@ let topCard = document.getElementById("cardDisp");
 
 function roll() {
     let d = document.getElementById("dice");
-    let t = document.getElementById("dtxt");
     let x = Math.floor(Math.random() * 6 + 1);
     let s = "/images/dice/" + x + ".png";
     d.src = s;
-    t.innerHTML = x;
-    return x;
+    console.log("Rolled");
 }
 
 function reset() {
@@ -20,6 +18,7 @@ function reset() {
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) { return i; });
     shownCards = [];
     cardDeck.height = 54;
+    console.log("Reset");
 }
 
 function shuffle() {
@@ -32,11 +31,13 @@ function shuffle() {
         cards[m] = cards[i];
         cards[i] = t;
     }
+    console.log(Shuffled);
 }
 
 function addDeck() {
     cards = cards.concat(oneDeck);
     cardDeck.height = cards.length;
+    console.log("Deck Added");
 }
 
 function draw() {
@@ -44,6 +45,7 @@ function draw() {
     shownCards.push(card);
     topCard.innerHTML = cardName(card);
     cardDeck.height = cards.length;
+    console.log("Drawn");
 }
 
 function cardName(cardNum) {
@@ -84,4 +86,6 @@ function cardName(cardNum) {
     if (suit == 3) {
         ret += "Diamonds";
     }
+    console.log("Card Calculated");
+    return ret;
 }
