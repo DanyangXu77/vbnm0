@@ -195,5 +195,4 @@ input:checked + .slider:before {
     right: 20px;
     left: 20px;
     padding: 20px 20px;
-    display: none;
 }

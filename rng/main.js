@@ -1,3 +1,8 @@
+document.addEventListener("load", function() {
+    let settings = document.getElementById("settings");
+    settings.setAttribute("display", "none");
+});
+
 let debug = false;
 
 function debug_log() {
@@ -14,7 +19,7 @@ let shownCards = [];
 let cardDeck = document.getElementsByClassName("cardDeck");
 let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
-let settings = document.getElementById("settings");
+let rolls = [0, 0, 0, 0, 0, 0];
 
 printLog.addEventListener("change", function() {
     debug = !debug;
@@ -23,10 +28,11 @@ printLog.addEventListener("change", function() {
 function roll() {
     let d = document.getElementById("dice");
     let x = Math.floor(Math.random() * 6 + 1);
+    rolls[x - 1]++;
     let s = "/images/dice/" + x + ".png";
     d.src = s;
     debug_log("Rolled");
-    debug_log(x);
+    debug_log(rolls);
 }
 
 function clearDisp() {
