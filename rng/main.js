@@ -57,9 +57,9 @@ function reset() {
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     shownCards = [];
     topCard.innerHTML = "";
-    updateDeck();
     updateScroll();
     remCards.innerHTML = "54 Remaining";
+    updateDeck();
     debug_log("Reset");
     debug_log(cards);
 }
@@ -74,14 +74,15 @@ function shuffle() {
         cards[m] = cards[i];
         cards[i] = t;
     }
+    updateDeck();
     debug_log("Shuffled");
     debug_log(cards);
 }
 
 function addDeck() {
     cards = cards.concat(oneDeck);
-    updateDeck();
     remCards.innerHTML = cards.length + " Remaining";
+    updateDeck();
     debug_log("Deck Added");
     debug_log(cards);
 }
@@ -181,7 +182,7 @@ function updateDeck() {
         let newElement = document.createElementNS("http://www.w3.org/2000/svg", 'path');
         newElement.setAttribute("d","M 0 " + i + " L 150 " + i);
         if (showclr) {
-            newElement.style.stroke = "rgb(" + 255 / cards[i] * 53 + ", " + 255 - 255 / cards[i] * 53 + ", 0)";
+            newElement.style.stroke = "#" + Math.floor(255 / 53 * cards[i]).toString(16) + Math.floor(255 - 255 / 53 * cards[i]).toString(16) + "00";
         } else {
             newElement.style.stroke = "#000000";
         }
