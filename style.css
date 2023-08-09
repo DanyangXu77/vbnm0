@@ -95,7 +95,7 @@ li a:hover:not(#active) {
     margin: 0px 0px;
 }
 
-.smboxbetter {
+.smbox {
     width: 147px;
     height: 27px;
     background-color: #444444;
@@ -106,6 +106,7 @@ li a:hover:not(#active) {
     overflow: auto;
     flex-direction: column-reverse;
     margin: 0px 0px;
+    display: inline-block;
 }
 
 .imp {
