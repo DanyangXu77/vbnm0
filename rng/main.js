@@ -97,9 +97,11 @@ function cardName(cardNum) {
 }
 
 function removeDeck() {
+    console.log("Removing Deck");
     for (let i = 0; i < 54; i++) {
         draw();
     }
+    console.log("Deck Removed");
 }
 
 function updateDeck() {
