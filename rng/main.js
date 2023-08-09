@@ -17,7 +17,7 @@ function reset() {
     cards = Array.apply(null, Array(54)).map(function (x, i) { return i; });
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) { return i; });
     shownCards = [];
-    topCard.innerHTML = "Unknown\n54 Remaining";
+    topCard.innerHTML = "Unknown<br>54 Remaining";
     updateDeck();
     console.log("Reset");
 }
@@ -55,10 +55,10 @@ function draw() {
 
 function cardName(cardNum) {
     if (cardNum == 52) {
-        return "Small Joker\n" + cards.length + " Remaining";
+        return "Small Joker<br>" + cards.length + " Remaining";
     }
     if (cardNum == 53) {
-        return "Big Joker\n" + cards.length + " Remaining";
+        return "Big Joker<br>" + cards.length + " Remaining";
     }
     let ret = "";
     let num = cardNum % 13;
@@ -91,7 +91,7 @@ function cardName(cardNum) {
     if (suit == 3) {
         ret += "Diamonds";
     }
-    ret += "\n" + cards.length + " Remaining";
+    ret += "<br>" + cards.length + " Remaining";
     console.log("Card Calculated");
     return ret;
 }
