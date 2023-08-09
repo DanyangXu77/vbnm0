@@ -1,6 +1,10 @@
 keyd = false;
-document.addEventListener("keydown", keyd = true);
-document.addEventListener("keyup", keyd = false);
+document.addEventListener("keydown", function() {
+    keyd = true
+});
+document.addEventListener("keyup", function() {
+    keyd = false
+});
 
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
