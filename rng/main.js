@@ -187,7 +187,7 @@ function updateDeck() {
         } else {
             newElement.style.stroke = "#000000";
         }
-        newElement.style.strokeWidth = "2px"; //Set stroke width
+        newElement.style.strokeWidth = "1px"; //Set stroke width
         cardDeck.appendChild(newElement);
     }
 }
