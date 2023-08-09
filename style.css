@@ -81,6 +81,8 @@ li a:hover:not(#active) {
     border: 2px inset #222222;
     padding: 0px 0px;
     text-align: center;
+    vertical-align: middle;
+    margin: 0px 0px;
 }
 
 .imp {
