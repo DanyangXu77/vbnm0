@@ -1,17 +1,10 @@
-keyd = false;
-document.addEventListener("keydown", function() {
-    keyd = true
-});
-document.addEventListener("keyup", function() {
-    keyd = false
-});
-
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 console.log(oneDeck);
 let shownCards = [];
 let cardDeck = document.getElementsByClassName("cardDeck");
 let topCard = document.getElementById("cardDisp");
+let remCards = document.getElementById("remDisp");
 
 function roll() {
     let d = document.getElementById("dice");
@@ -25,8 +18,9 @@ function reset() {
     cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     shownCards = [];
-    topCard.innerHTML = "Unknown<br>54 Remaining";
+    topCard.innerHTML = "Unknown";
     updateDeck();
+    remCards.innerHTML = "54 Remaining";
     console.log("Reset");
     console.log(cards);
 }
@@ -48,6 +42,7 @@ function shuffle() {
 function addDeck() {
     cards = cards.concat(oneDeck);
     updateDeck();
+    remCards.innerHTML = cards.length + " Remaining";
     console.log("Deck Added");
     console.log(cards);
 }
@@ -59,7 +54,8 @@ function draw() {
     }
     card = cards.pop();
     shownCards.push(card);
-    topCard.innerHTML = cardName(card);
+    topCard.innerHTML += "<br>" + cardName(card);
+    remCards.innerHTML = cards.length + " Remaining";
     updateDeck();
     console.log("Drawn");
     console.log(cards);
@@ -68,10 +64,10 @@ function draw() {
 
 function cardName(cardNum) {
     if (cardNum == 52) {
-        return "Small Joker<br>" + cards.length + " Remaining";
+        return "Small Joker";
     }
     if (cardNum == 53) {
-        return "Big Joker<br>" + cards.length + " Remaining";
+        return "Big Joker";
     }
     let ret = "";
     let num = cardNum % 13;
@@ -104,27 +100,19 @@ function cardName(cardNum) {
     if (suit == 3) {
         ret += "Diamonds";
     }
-    ret += "<br>" + cards.length + " Remaining";
     console.log("Card Calculated");
     return ret;
 }
 
 function removeDeck() {
-    if (keyd) {
-        console.log("Removing Deck");
-        for (let i = 0; i < 54; i++) {
-            setTimeout(draw, 500);
+    console.log("Removing Deck");
+    for (let i = 0; i < 54; i++) {
+        if (draw() == 0) {
+            return;
         }
-        console.log("Deck Removed");
-    } else {
-        console.log("Removing Deck");
-        for (let i = 0; i < 54; i++) {
-            if (draw() == 0) {
-                return;
-            }
-        }
-        console.log("Deck Removed");
     }
+    remCards.innerHTML = cards.length + " Remaining";
+    console.log("Deck Removed");
 }
 
 function updateDeck() {
