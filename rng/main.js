@@ -35,7 +35,7 @@ function clearDisp() {
 }
 
 function openSettings() {
-    settings.setAttribute("hidden", null);
+    settings.setAttribute("hidden", "");
 }
 
 function closeSettings() {
