@@ -16,9 +16,10 @@ let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
 let rolls = [0, 0, 0, 0, 0, 0];
 
-printLog.addEventListener("change", function() {
+function chngPrintLog() {
     debug = !debug;
-});
+    printLog.innerHTML = debug;
+}
 
 function roll() {
     let d = document.getElementById("dice");
