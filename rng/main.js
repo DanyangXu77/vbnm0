@@ -6,7 +6,7 @@ function debug_log() {
     }
 }
 
-let printLog = document.getElementById("printLogs");
+let printLog = document.getElementById("printLog");
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 debug_log(oneDeck);
