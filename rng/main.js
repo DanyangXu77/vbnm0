@@ -66,7 +66,7 @@ function cardName(cardNum) {
         ret += "Ace of ";
     }
     if (num < 10 && num > 0) {
-        ret += num + 1 + "of ";
+        ret += num + 1 + " of ";
     }
     if (num == 10) {
         ret += "Jack of "
