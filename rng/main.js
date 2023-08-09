@@ -14,6 +14,8 @@ let shownCards = [];
 let cardDeck = document.getElementsByClassName("cardDeck");
 let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
+let settings = document.getElementById("settings");
+let settingsOpen = false;
 
 printLog.addEventListener("change", function() {
     debug = !debug;
@@ -30,6 +32,11 @@ function roll() {
 
 function clearDisp() {
     topCard.innerHTML = "";
+}
+
+function openSettings() {
+    settingsOpen = !settingsOpen;
+    settings.hidden = settingsOpen;
 }
 
 function reset() {
