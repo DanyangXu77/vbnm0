@@ -179,12 +179,14 @@ input:checked + .slider:before {
 
 .tr {
     position: fixed;
-    top: 35px;
-    bottom: 20px;
+    top: 40px;
     right: 20px;
-    left: 20px;
 }
 
 #settings {
     background-color: #888888;
+    top: 40px;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
 }
