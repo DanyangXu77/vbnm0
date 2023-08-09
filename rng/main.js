@@ -52,13 +52,14 @@ function addDeck() {
 function draw() {
     if (cards.length == 0) {
         console.log("Cannot Draw");
-        return;
+        return 0;
     }
     card = cards.pop();
     shownCards.push(card);
     topCard.innerHTML = cardName(card);
     updateDeck();
     console.log("Drawn");
+    return 1;
 }
 
 function cardName(cardNum) {
@@ -108,13 +109,15 @@ function removeDeck() {
     if (keyd) {
         console.log("Removing Deck");
         for (let i = 0; i < 54; i++) {
-            setTimeout(draw, 200);
+            setTimeout(draw, 500);
         }
         console.log("Deck Removed");
     } else {
         console.log("Removing Deck");
         for (let i = 0; i < 54; i++) {
-            draw();
+            if (draw() == 0) {
+                return;
+            }
         }
         console.log("Deck Removed");
     }
