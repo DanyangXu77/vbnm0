@@ -1,8 +1,3 @@
-document.addEventListener("load", function() {
-    let settings = document.getElementById("settings");
-    settings.setAttribute("display", "none");
-});
-
 let debug = false;
 
 function debug_log() {
@@ -40,11 +35,11 @@ function clearDisp() {
 }
 
 function openSettings() {
-    settings.setAttribute("display", "inline-block");
+    settings.setAttribute("hidden", false);
 }
 
 function closeSettings() {
-    settings.setAttribute("display", "none");
+    settings.setAttribute("display", true);
 }
 
 function reset() {
