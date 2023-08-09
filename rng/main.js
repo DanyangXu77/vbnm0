@@ -113,9 +113,10 @@ function cardName(cardNum) {
 function removeDeck() {
     console.log("Removing Deck");
     for (let i = 0; i < 54; i++) {
-        if (draw() == 0) {
+        if (cards.length == 0) {
             return;
         }
+        cards.pop();
     }
     remCards.innerHTML = cards.length + " Remaining";
     console.log("Deck Removed");
