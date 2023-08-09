@@ -59,7 +59,7 @@ function reset() {
 
 function shuffle() {
     let m = cards.length, t, i;
-  
+
     while (m) {
         i = Math.floor(Math.random() * m--);
       
@@ -91,6 +91,7 @@ function draw() {
     remCards.innerHTML = cards.length + " Remaining";
     updateDeck();
     debug_log("Drawn");
+    debug_log(card);
     debug_log(cards);
     return 1;
 }
