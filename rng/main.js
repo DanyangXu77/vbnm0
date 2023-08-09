@@ -17,7 +17,7 @@ function reset() {
     cards = Array.apply(null, Array(54)).map(function (x, i) { return i; });
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) { return i; });
     shownCards = [];
-    cardDeck.height = 54;
+    cardDeck.setAttribute("height", "54px");
     console.log("Reset");
 }
 
@@ -36,19 +36,19 @@ function shuffle() {
 
 function addDeck() {
     cards = cards.concat(oneDeck);
-    cardDeck.height = cards.length;
+    cardDeck.setAttribute("height", cards.length);
     console.log("Deck Added");
 }
 
 function draw() {
-    if (card.length == 0) {
+    if (cards.length == 0) {
         console.log("Cannot Draw");
         return;
     }
     card = cards.pop();
     shownCards.push(card);
     topCard.innerHTML = cardName(card);
-    cardDeck.height = cards.length;
+    cardDeck.setAttribute("height", cards.length);
     console.log("Drawn");
 }
 
