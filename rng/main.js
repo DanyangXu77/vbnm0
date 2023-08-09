@@ -183,10 +183,15 @@ function updateDeck() {
         let newElement = document.createElementNS("http://www.w3.org/2000/svg", 'path');
         newElement.setAttribute("d","M 0 " + i + " L 150 " + i);
         if (showclr) {
-            if ((Math.round(255 / 53 * cards[i])).toString(16).length != 2 || (Math.round(255 - 255 / 53 * cards[i])).toString(16).length != 2) {
-                console.log("bruh");
+            let z1 = "";
+            let z2 = "";
+            if (Math.round(255 / 53 * cards[i]) < 16) {
+                z1 += "0";
             }
-            newElement.style.stroke = "#" + (Math.round(255 / 53 * cards[i])).toString(16) + (Math.round(255 - 255 / 53 * cards[i])).toString(16) + "00";
+            if (Math.round(255 - 255 / 53 * cards[i]) < 16) {
+                z2 += "0";
+            }
+            newElement.style.stroke = "#" + z1 + (Math.round(255 / 53 * cards[i])).toString(16) + z2 + (Math.round(255 - 255 / 53 * cards[i])).toString(16) + "00";
         } else {
             newElement.style.stroke = "#000000";
         }
