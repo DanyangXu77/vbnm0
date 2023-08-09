@@ -81,9 +81,8 @@ li a:hover:not(#active) {
     border: 2px inset #222222;
     padding: 0px 0px;
     text-align: center;
-    overflow: scroll;
+    overflow: auto;
     flex-direction: column-reverse;
-    line-height: 50%;
     margin: 0px 0px;
 }
 

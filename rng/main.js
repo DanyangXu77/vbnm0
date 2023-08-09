@@ -20,6 +20,7 @@ function reset() {
     shownCards = [];
     topCard.innerHTML = "Unknown";
     updateDeck();
+    updateScroll();
     remCards.innerHTML = "54 Remaining";
     console.log("Reset");
     console.log(cards);
@@ -55,6 +56,7 @@ function draw() {
     card = cards.pop();
     shownCards.push(card);
     topCard.innerHTML += "<br>" + cardName(card);
+    updateScroll();
     remCards.innerHTML = cards.length + " Remaining";
     updateDeck();
     console.log("Drawn");
@@ -119,4 +121,8 @@ function updateDeck() {
     for (let i = 0; i < cardDeck.length; i++) {
         cardDeck[i].setAttribute("height", cards.length);
     }
+}
+
+function updateScroll() {
+    topCard.scrollTop = topCard.scrollHeight;
 }
