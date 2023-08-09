@@ -96,6 +96,12 @@ function cardName(cardNum) {
     return ret;
 }
 
+function removeDeck() {
+    for (let i = 0; i < 54; i++) {
+        draw();
+    }
+}
+
 function updateDeck() {
     for (let i = 0; i < cardDeck.length; i++) {
         cardDeck[i].setAttribute("height", cards.length);
