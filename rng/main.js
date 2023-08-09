@@ -14,11 +14,15 @@ function roll() {
     console.log("Rolled");
 }
 
+function clear() {
+    topCard.innerHTML = "";
+}
+
 function reset() {
     cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     shownCards = [];
-    topCard.innerHTML = "Unknown";
+    topCard.innerHTML = "";
     updateDeck();
     updateScroll();
     remCards.innerHTML = "54 Remaining";
