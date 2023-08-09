@@ -18,7 +18,7 @@ function reset() {
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) { return i; });
     shownCards = [];
     topCard.innerHTML = "Unknown\n54 Remaining";
-    cardDeck.setAttribute("height", "54px");
+    updateDeck();
     console.log("Reset");
 }
 
@@ -37,7 +37,7 @@ function shuffle() {
 
 function addDeck() {
     cards = cards.concat(oneDeck);
-    cardDeck.setAttribute("height", cards.length);
+    updateDeck();
     console.log("Deck Added");
 }
 
@@ -49,7 +49,7 @@ function draw() {
     card = cards.pop();
     shownCards.push(card);
     topCard.innerHTML = cardName(card);
-    cardDeck.setAttribute("height", cards.length);
+    updateDeck();
     console.log("Drawn");
 }
 
@@ -94,4 +94,10 @@ function cardName(cardNum) {
     ret += "\n" + cards.length + "Remaining";
     console.log("Card Calculated");
     return ret;
+}
+
+function updateDeck() {
+    for (let i = 0; i < cardDeck.length; i++) {
+        cardDeck[i].setAttribute("height", cards.length);
+    }
 }
