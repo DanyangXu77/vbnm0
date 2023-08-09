@@ -137,7 +137,7 @@ li a:hover:not(#active) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #bbbbbb;
+    background-color: #ff0000;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -149,7 +149,7 @@ li a:hover:not(#active) {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #ff0000;
+    background-color: #bbbbbb;
     -webkit-transition: .4s;
     transition: .4s;
 }
