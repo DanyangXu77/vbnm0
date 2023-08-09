@@ -114,11 +114,13 @@ function removeDeck() {
     console.log("Removing Deck");
     for (let i = 0; i < 54; i++) {
         if (cards.length == 0) {
+            updateDeck();
             return;
         }
         cards.pop();
     }
     remCards.innerHTML = cards.length + " Remaining";
+    updateDeck();
     console.log("Deck Removed");
 }
 
