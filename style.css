@@ -178,13 +178,13 @@ input:checked + .slider:before {
 
 .tr {
     position: fixed;
-    top: 50px;
+    top: 60px;
     right: 20px;
 }
 
 .mtr {
     position: fixed;
-    top: 70px;
+    top: 80px;
     right: 40px;
 }
 
@@ -195,4 +195,5 @@ input:checked + .slider:before {
     right: 20px;
     left: 20px;
     padding: 20px 20px;
+    display: none;
 }
