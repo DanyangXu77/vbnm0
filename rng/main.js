@@ -25,6 +25,7 @@ function chngPrintLog() {
 function chngShowColor() {
     showclr = !showclr;
     showColor.innerHTML = showclr;
+    updateDeck();
 }
 
 function roll() {
