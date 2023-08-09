@@ -6,6 +6,7 @@ function debug_log() {
     }
 }
 
+let showclr = false;
 let printLog = document.getElementById("printLog");
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
@@ -19,6 +20,11 @@ let rolls = [0, 0, 0, 0, 0, 0];
 function chngPrintLog() {
     debug = !debug;
     printLog.innerHTML = debug;
+}
+
+function chngShowColor() {
+    showclr = !showclr;
+    showColor.innerHTML = showclr;
 }
 
 function roll() {
@@ -162,9 +168,25 @@ function removeDeck() {
     debug_log("Deck Removed");
 }
 
+function removePaths() {
+    while (cardDeck.firstChild) {
+        cardDeck.removeChild(cardDeck.lastChild);
+    }
+}
+
 function updateDeck() {
-    for (let i = 0; i < cardDeck.length; i++) {
-        cardDeck[i].setAttribute("height", cards.length);
+    removePaths();
+    cardDeck.setAttribute("height", cards.length);
+    for (let i = 0; i < cards.length; i++) {
+        let newElement = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+        newElement.setAttribute("d","M 0 " + i + " L 150 " + i + " 10");
+        if (showclr) {
+            newElement.style.stroke = "rgb(" + 255 / cards[i] * 53 + ", " + 255 - 255 / cards[i] * 53 + ", 0)";
+        } else {
+            newElement.style.stroke = "#000000";
+        }
+        newElement.style.strokeWidth = "1px"; //Set stroke width
+        cardDeck.appendChild(newElement);
     }
 }
 
