@@ -55,10 +55,10 @@ function draw() {
 
 function cardName(cardNum) {
     if (cardNum == 52) {
-        return "Small Joker\n" + cards.length + "Remaining";
+        return "Small Joker\n" + cards.length + " Remaining";
     }
     if (cardNum == 53) {
-        return "Big Joker\n" + cards.length + "Remaining";
+        return "Big Joker\n" + cards.length + " Remaining";
     }
     let ret = "";
     let num = cardNum % 13;
@@ -91,7 +91,7 @@ function cardName(cardNum) {
     if (suit == 3) {
         ret += "Diamonds";
     }
-    ret += "\n" + cards.length + "Remaining";
+    ret += "\n" + cards.length + " Remaining";
     console.log("Card Calculated");
     return ret;
 }
