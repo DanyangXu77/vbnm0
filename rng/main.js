@@ -6,7 +6,6 @@ function debug_log() {
     }
 }
 
-updateDeck();
 let showclr = false;
 let printLog = document.getElementById("printLog");
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
@@ -195,3 +194,5 @@ function updateDeck() {
 function updateScroll() {
     topCard.scrollTop = topCard.scrollHeight;
 }
+
+updateDeck();
