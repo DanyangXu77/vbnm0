@@ -190,9 +190,9 @@ input:checked + .slider:before {
 
 #settings {
     background-color: #888888;
-    top: 60px;
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
-    padding: 20px 20px;
+    top: 40px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    padding: 0px 20px;
 }
