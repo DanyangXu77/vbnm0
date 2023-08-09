@@ -10,7 +10,7 @@ body {
 }
 
 .mar {
-    margin: 10px;
+    margin: 20px;
 }
 
 .pad {
@@ -121,7 +121,7 @@ li a:hover:not(#active) {
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 34px;
+    height: 30px;
 }
   
 .switch input { 
@@ -138,20 +138,20 @@ li a:hover:not(#active) {
     right: 0;
     bottom: 0;
     background-color: #ff0000;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
 }
   
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 30px;
+    width: 20px;
+    left: 5px;
+    bottom: 5px;
     background-color: #bbbbbb;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
 }
   
 input:checked + .slider {
@@ -169,7 +169,7 @@ input:checked + .slider:before {
 }
   
 .slider.round {
-    border-radius: 34px;
+    border-radius: 30px;
 }
   
 .slider.round:before {
