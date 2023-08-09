@@ -199,12 +199,9 @@ input:checked + .slider:before {
 
 .flexbox {
     display: flex;
-    flex-wrap: wrap;
+    flex: auto;
 }
 
-.flexbox h3 {
-    flex: 50%;
-}
-.flexbox label {
+.b {
     flex: 50%;
 }
