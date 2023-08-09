@@ -22,8 +22,8 @@ function roll() {
 }
 
 function reset() {
-    cards = Array.apply(null, Array(54)).map(function (x, i) { return i; });
-    oneDeck = Array.apply(null, Array(54)).map(function (x, i) { return i; });
+    cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
+    oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     shownCards = [];
     topCard.innerHTML = "Unknown<br>54 Remaining";
     updateDeck();
