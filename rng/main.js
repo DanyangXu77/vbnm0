@@ -87,6 +87,15 @@ function draw() {
     }
     card = cards.pop();
     shownCards.push(card);
+    if (topCard.innerHTML == "") {
+        topCard.innerHTML = cardName(card);
+        remCards.innerHTML = cards.length + " Remaining";
+        updateDeck();
+        debug_log("Drawn");
+        debug_log(card);
+        debug_log(cards);
+        return 1;
+    }
     topCard.innerHTML += "<br>" + cardName(card);
     updateScroll();
     remCards.innerHTML = cards.length + " Remaining";
