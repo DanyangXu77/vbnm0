@@ -1,7 +1,7 @@
 let cards = Array.apply(null, Array(54)).map(function (x, i) { return i; });
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) { return i; });
 let shownCards = [];
-let cardDeck = document.getElementById("cardDeck");
+let cardDeck = document.getElementsByClassName("cardDeck");
 let topCard = document.getElementById("cardDisp");
 
 function roll() {
@@ -22,7 +22,7 @@ function reset() {
 }
 
 function shuffle() {
-    var m = cards.length, t, i;
+    let m = cards.length, t, i;
   
     while (m) {
         i = Math.floor(Math.random() * m--);
