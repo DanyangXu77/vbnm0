@@ -15,7 +15,6 @@ let cardDeck = document.getElementsByClassName("cardDeck");
 let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
 let settings = document.getElementById("settings");
-let settingsOpen = false;
 
 printLog.addEventListener("change", function() {
     debug = !debug;
@@ -35,8 +34,11 @@ function clearDisp() {
 }
 
 function openSettings() {
-    settingsOpen = !settingsOpen;
-    settings.hidden = settingsOpen;
+    settings.hidden = false;
+}
+
+function closeSettings() {
+    settings.hidden = true;
 }
 
 function reset() {

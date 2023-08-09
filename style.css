@@ -168,7 +168,6 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
   
-  /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
 }
@@ -183,10 +182,17 @@ input:checked + .slider:before {
     right: 20px;
 }
 
+.mtr {
+    position: fixed;
+    top: 60px;
+    right: 40px;
+}
+
 #settings {
     background-color: #888888;
-    top: 40px;
+    top: 60px;
     bottom: 20px;
     right: 20px;
     left: 20px;
+    padding: 20px 20px;
 }
