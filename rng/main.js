@@ -108,7 +108,7 @@ function removeDeck() {
     if (keyd) {
         console.log("Removing Deck");
         for (let i = 0; i < 54; i++) {
-            setTimeout(draw, 100);
+            setTimeout(draw, 200);
         }
         console.log("Deck Removed");
     } else {
