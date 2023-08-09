@@ -1,5 +1,5 @@
-let cards = Array.apply(null, Array(54)).map(function (x, i) {return i;});
-let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return i;});
+let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
+let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 console.log(oneDeck);
 let shownCards = [];
 let cardDeck = document.getElementsByClassName("cardDeck");
