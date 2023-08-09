@@ -31,7 +31,7 @@ function shuffle() {
         cards[m] = cards[i];
         cards[i] = t;
     }
-    console.log(Shuffled);
+    console.log("Shuffled");
 }
 
 function addDeck() {
@@ -41,6 +41,10 @@ function addDeck() {
 }
 
 function draw() {
+    if (card.length == 0) {
+        console.log("Cannot Draw");
+        return;
+    }
     card = cards.pop();
     shownCards.push(card);
     topCard.innerHTML = cardName(card);
