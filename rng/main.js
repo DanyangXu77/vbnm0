@@ -82,12 +82,12 @@ function shuffle() {
 
 function addDeck() {
     cards = cards.concat(oneDeck);
-    remCards.innerHTML = cards.length + " Remaining";
     if (cards.length > 702) {
         while (cards.length > 702) {
             cards.pop();
         }
     }
+    remCards.innerHTML = cards.length + " Remaining";
     updateDeck();
     debug_log("Deck Added");
     debug_log(cards);
