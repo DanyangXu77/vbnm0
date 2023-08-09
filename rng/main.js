@@ -12,7 +12,7 @@ let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 debug_log(oneDeck);
 let shownCards = [];
-let cardDeck = document.getElementsByClassName("cardDeck");
+let cardDeck = document.getElementsById("cardDeck");
 let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
 let rolls = [0, 0, 0, 0, 0, 0];
