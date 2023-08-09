@@ -179,5 +179,5 @@ input:checked + .slider:before {
 
 .tr {
     position: fixed;
-    top: 10px; right: 10px;
+    top: 30px; right: 20px;
 }
