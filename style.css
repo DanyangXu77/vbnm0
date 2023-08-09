@@ -107,6 +107,7 @@ li a:hover:not(#active) {
     flex-direction: column-reverse;
     margin: 0px 0px;
     display: inline-block;
+    font-size: 12px;
 }
 
 .imp {
