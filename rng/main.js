@@ -179,13 +179,13 @@ function updateDeck() {
     cardDeck.setAttribute("height", cards.length);
     for (let i = 0; i < cards.length; i++) {
         let newElement = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-        newElement.setAttribute("d","M 0 " + i + " L 150 " + i + " 10");
+        newElement.setAttribute("d","M 0 " + i + " L 150 " + i);
         if (showclr) {
             newElement.style.stroke = "rgb(" + 255 / cards[i] * 53 + ", " + 255 - 255 / cards[i] * 53 + ", 0)";
         } else {
             newElement.style.stroke = "#000000";
         }
-        newElement.style.strokeWidth = "1px"; //Set stroke width
+        newElement.style.strokeWidth = "2px"; //Set stroke width
         cardDeck.appendChild(newElement);
     }
 }
