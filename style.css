@@ -184,7 +184,7 @@ input:checked + .slider:before {
 
 .mtr {
     position: fixed;
-    top: 60px;
+    top: 70px;
     right: 40px;
 }
 

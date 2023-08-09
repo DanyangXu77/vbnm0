@@ -34,11 +34,11 @@ function clearDisp() {
 }
 
 function openSettings() {
-    settings.hidden = false;
+    settings.setAttribute("display", "inline-block");
 }
 
 function closeSettings() {
-    settings.hidden = true;
+    settings.setAttribute("display", "none");
 }
 
 function reset() {
