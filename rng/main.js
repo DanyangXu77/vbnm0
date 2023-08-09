@@ -1,3 +1,7 @@
+keyd = false;
+document.addEventListener("keydown", keyd = true);
+document.addEventListener("keyup", keyd = false);
+
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 console.log(oneDeck);
@@ -97,11 +101,20 @@ function cardName(cardNum) {
 }
 
 function removeDeck() {
-    console.log("Removing Deck");
-    for (let i = 0; i < 54; i++) {
-        draw();
+    if (keyd) {
+        console.log("Removing Deck");
+        for (let i = 0; i < 54; i++) {
+            draw();
+            wait(50);
+        }
+        console.log("Deck Removed");
+    } else {
+        console.log("Removing Deck");
+        for (let i = 0; i < 54; i++) {
+            draw();
+        }
+        console.log("Deck Removed");
     }
-    console.log("Deck Removed");
 }
 
 function updateDeck() {
