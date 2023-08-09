@@ -35,11 +35,11 @@ function clearDisp() {
 }
 
 function openSettings() {
-    settings.setAttribute("hidden", "");
+    settings.hidden = false;
 }
 
 function closeSettings() {
-    settings.setAttribute("display", 1);
+    settings.hidden = true;
 }
 
 function reset() {
