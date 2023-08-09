@@ -196,3 +196,15 @@ input:checked + .slider:before {
     left: 0px;
     padding: 0px 20px;
 }
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox h3 {
+    flex: 50%;
+}
+.flexbox label {
+    flex: 50%;
+}
