@@ -181,7 +181,7 @@ function updateDeck() {
     cardDeck.setAttribute("height", cards.length);
     for (let i = 0; i < cards.length; i++) {
         let newElement = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-        newElement.setAttribute("d","M 0 " + cards.length - i + " L 150 " + cards.length - i);
+        newElement.setAttribute("d","M 0 " + (cards.length - i) + " L 150 " + (cards.length - i));
         if (showclr) {
             let z1 = "";
             let z2 = "";
