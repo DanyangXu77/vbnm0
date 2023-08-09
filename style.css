@@ -14,7 +14,7 @@ body {
 }
 
 .pad {
-    padding: 10px;
+    padding: 20px;
 }
 
 .cblock {
@@ -190,7 +190,7 @@ input:checked + .slider:before {
 
 #settings {
     background-color: #888888;
-    top: 40px;
+    top: 41px;
     bottom: 0px;
     right: 0px;
     left: 0px;
