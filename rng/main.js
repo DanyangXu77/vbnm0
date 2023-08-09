@@ -46,16 +46,16 @@ function draw() {
     cardDeck.height = cards.length;
 }
 
-function cardName(num) {
-    if (num == 52) {
+function cardName(cardNum) {
+    if (cardNum == 52) {
         return "Small Joker";
     }
-    if (num == 53) {
+    if (cardNum == 53) {
         return "Big Joker";
     }
     let ret = "";
-    let num = num % 13;
-    let suit = Math.floor(num / 13);
+    let num = cardNum % 13;
+    let suit = Math.floor(cardNum / 13);
     if (num == 0) {
         ret += "Ace of ";
     }
