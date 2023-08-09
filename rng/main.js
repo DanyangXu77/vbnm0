@@ -14,7 +14,7 @@ function roll() {
     console.log("Rolled");
 }
 
-function clear() {
+function clearDisp() {
     topCard.innerHTML = "";
 }
 
