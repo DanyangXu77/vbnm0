@@ -7,6 +7,7 @@ function debug_log() {
 }
 
 let showclr = false;
+let showdck = true;
 let printLog = document.getElementById("printLog");
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
@@ -22,10 +23,24 @@ function chngPrintLog() {
     printLog.innerHTML = debug;
 }
 
+function chngShowDeck() {
+    showdck = !showdck;
+    showDeck.innerHTML = showdck;
+}
+
+function displayDeck() {
+    if (showdck) {
+        updateDeck();
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 function chngShowColor() {
     showclr = !showclr;
     showColor.innerHTML = showclr;
-    updateDeck();
+    displayDeck();
 }
 
 function roll() {
@@ -60,7 +75,7 @@ function reset() {
     topCard.innerHTML = "";
     updateScroll();
     remCards.innerHTML = "54 Remaining";
-    updateDeck();
+    displayDeck();
     debug_log("Reset");
     debug_log(cards);
 }
@@ -75,7 +90,7 @@ function shuffle() {
         cards[m] = cards[i];
         cards[i] = t;
     }
-    updateDeck();
+    displayDeck();
     debug_log("Shuffled");
     debug_log(cards);
 }
@@ -88,7 +103,7 @@ function addDeck() {
         }
     }
     remCards.innerHTML = cards.length + " Remaining";
-    updateDeck();
+    displayDeck();
     debug_log("Deck Added");
     debug_log(cards);
 }
@@ -103,7 +118,7 @@ function draw() {
     if (topCard.innerHTML == "") {
         topCard.innerHTML = cardName(card);
         remCards.innerHTML = cards.length + " Remaining";
-        updateDeck();
+        displayDeck();
         debug_log("Drawn");
         debug_log(card);
         debug_log(cards);
@@ -112,7 +127,7 @@ function draw() {
     topCard.innerHTML += "<br>" + cardName(card);
     updateScroll();
     remCards.innerHTML = cards.length + " Remaining";
-    updateDeck();
+    displayDeck();
     debug_log("Drawn");
     debug_log(card);
     debug_log(cards);
@@ -165,13 +180,13 @@ function removeDeck() {
     debug_log("Removing Deck");
     for (let i = 0; i < 54; i++) {
         if (cards.length == 0) {
-            updateDeck();
+            displayDeck();
             return;
         }
         cards.pop();
     }
     remCards.innerHTML = cards.length + " Remaining";
-    updateDeck();
+    displayDeck();
     debug_log("Deck Removed");
 }
 
@@ -209,4 +224,4 @@ function updateScroll() {
     topCard.scrollTop = topCard.scrollHeight;
 }
 
-updateDeck();
+displayDeck();
