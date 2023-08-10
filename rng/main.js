@@ -183,6 +183,7 @@ function removeDeck() {
     for (let i = 0; i < 54; i++) {
         if (cards.length == 0) {
             displayDeck();
+            remCards.innerHTML = "0 Remaining";
             return;
         }
         cards.pop();
