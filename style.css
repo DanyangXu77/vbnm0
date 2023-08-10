@@ -83,6 +83,24 @@ li a:hover:not(#active) {
     border: 2px inset #222222;   
 }
 
+.btn:disabled {
+    font-family: 'Jost', sans-serif !important;
+    width: 150px;
+    height: 30px;
+    background-color: #666666;
+    color: #ffffff;
+    border: 2px inset #222222;   
+}
+
+.smbtn:disabled {
+    font-family: 'Jost', sans-serif !important;
+    width: 30px;
+    height: 30px;
+    background-color: #666666;
+    color: #ffffff;
+    border: 2px inset #222222;   
+}
+
 .boxbetter {
     width: 146.8px;
     height: 36.8px;
