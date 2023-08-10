@@ -16,6 +16,7 @@ let shownCards = [];
 let cardDeck = document.getElementById("cardDeck");
 let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
+let showDeck = document.getElementById("showDeck");
 let rolls = [0, 0, 0, 0, 0, 0];
 
 function chngPrintLog() {
@@ -25,6 +26,7 @@ function chngPrintLog() {
 
 function chngShowDeck() {
     showdck = !showdck;
+    showColor.disabled = !showdck;
     showDeck.innerHTML = showdck;
 }
 
