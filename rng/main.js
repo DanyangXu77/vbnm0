@@ -48,8 +48,9 @@ function chngShowColor() {
 function roll() {
     let d = document.getElementById("dice");
     let x = Math.floor(Math.random() * 6 + 1);
+    let f = Math.round(Math.random());
     rolls[x - 1]++;
-    let s = "/images/dice/" + x + ".png";
+    let s = "/images/dice/" + x + f + ".png";
     d.src = s;
     debug_log("Rolled");
     debug_log(x);
