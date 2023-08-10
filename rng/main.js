@@ -32,9 +32,11 @@ function chngShowDeck() {
 
 function displayDeck() {
     if (showdck) {
+        cardDeck.hidden = false;
         updateDeck();
         return 1;
     } else {
+        cardDeck.hidden = true;
         return 0;
     }
 }
