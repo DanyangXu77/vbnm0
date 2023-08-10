@@ -89,7 +89,7 @@ li a:hover:not(#active) {
     height: 30px;
     background-color: #666666;
     color: #ffffff;
-    border: 2px inset #222222;   
+    border: 2px inset #444444;   
 }
 
 .smbtn:disabled {
@@ -98,7 +98,7 @@ li a:hover:not(#active) {
     height: 30px;
     background-color: #666666;
     color: #ffffff;
-    border: 2px inset #222222;   
+    border: 2px inset #444444;   
 }
 
 .boxbetter {
