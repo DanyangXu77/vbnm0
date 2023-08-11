@@ -23,9 +23,9 @@ function loadCookies() {
     if (document.cookie.length != 8) {
         return;
     }
-    debug = document.cookie.charAt(5) == "1" ? 1 : 0;
-    showdck = document.cookie.charAt(6) == "1" ? 1 : 0;
-    showclr = document.cookie.charAt(7) == "1" ? 1 : 0;
+    debug = document.cookie.charAt(5) == "1" ? true : false;
+    showdck = document.cookie.charAt(6) == "1" ? true : false;
+    showclr = document.cookie.charAt(7) == "1" ? true : false;
     displayDeck();
     printLog.innerHTML = debug;
     showDeck.innerHTML = showdck;
