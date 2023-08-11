@@ -20,9 +20,12 @@ let showDeck = document.getElementById("showDeck");
 let rolls = [0, 0, 0, 0, 0, 0];
 
 function loadCookies() {
-    debug = Boolean(document.cookie.charAt(5));
-    showdck = Boolean(document.cookie.charAt(6));
-    showclr = Boolean(document.cookie.charAt(7));
+    if (document.cookie.length != 8) {
+        return;
+    }
+    debug = document.cookie.charAt(5) == "1" ? 1 : 0;
+    showdck = document.cookie.charAt(6) == "1" ? 1 : 0;
+    showclr = document.cookie.charAt(7) == "1" ? 1 : 0;
     displayDeck();
     printLog.innerHTML = debug;
     showDeck.innerHTML = showdck;
