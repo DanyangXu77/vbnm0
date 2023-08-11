@@ -17,11 +17,13 @@ let cardDeck = document.getElementById("cardDeck");
 let topCard = document.getElementById("cardDisp");
 let remCards = document.getElementById("remDisp");
 let showDeck = document.getElementById("showDeck");
+let cover = document.getElementById("cover");
 let rolls = [0, 0, 0, 0, 0, 0];
 
 function loadCookies() {
     console.log("Attempted to load cookies");
     if (document.cookie.length != 8) {
+        console.log("Invalid cookies");
         return;
     }
     debug = document.cookie.charAt(5) == "1" ? true : false;
@@ -32,7 +34,6 @@ function loadCookies() {
     showColor.innerHTML = showclr;
     if (!showdck) {
         removePaths();
-        cardDeck.hidden = true;
     }
     displayDeck();
 }
@@ -47,17 +48,18 @@ function chngShowDeck() {
     showdck = !showdck;
     showColor.disabled = !showdck;
     showDeck.innerHTML = showdck;
-    cardDeck.hidden = !showdck;
+    cover.hidden = !showdck;
+    displayDeck();
     updateSettingsCookies();
 }
 
 function displayDeck() {
     if (showdck) {
-        cardDeck.hidden = false;
+        cover.hidden = false;
         updateDeck();
         return 1;
     } else {
-        cardDeck.hidden = true;
+        cover.hidden = true;
         return 0;
     }
 }
@@ -92,8 +94,6 @@ function openSettings() {
 function closeSettings() {
     settings.hidden = true;
 }
-
-settings.onscroll = function() {return;};
 
 function reset() {
     cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
