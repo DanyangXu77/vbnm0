@@ -20,10 +20,13 @@ let showDeck = document.getElementById("showDeck");
 let rolls = [0, 0, 0, 0, 0, 0];
 
 function loadCookies() {
-    debug = document.cookie.charAt(2);
-    showdck = document.cookie.charAt(3);
-    showclr = document.cookie.charAt(4);
+    debug = Boolean(document.cookie.charAt(2));
+    showdck = Boolean(document.cookie.charAt(3));
+    showclr = Boolean(document.cookie.charAt(4));
     displayDeck();
+    printLog.innerHTML = debug;
+    showDeck.innerHTML = showdck;
+    showColor.innerHTML = showclr;
     console.log("Attempted to load cookies");
 }
 
