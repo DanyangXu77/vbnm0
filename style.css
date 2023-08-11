@@ -164,8 +164,8 @@ li a:hover:not(#active) {
     background-color: #888888;
     right: 20px;
     bottom: 20px;
-    width: 300px;
-    height: 100px;
+    left: 800px;
+    top: 500px;
     padding: 0px 20px;
 }
 
