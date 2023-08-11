@@ -47,6 +47,7 @@ function chngShowDeck() {
     showdck = !showdck;
     showColor.disabled = !showdck;
     showDeck.innerHTML = showdck;
+    displayDeck();
     updateSettingsCookies();
 }
 
