@@ -7,6 +7,7 @@ function debug_log() {
     }
 }
 
+let cookieAlert = document.getElementById("cookies");
 let showclr = false;
 let showdck = true;
 let printLog = document.getElementById("printLog");
@@ -23,16 +24,19 @@ let rolls = [0, 0, 0, 0, 0, 0];
 
 function deny() {
     allowCookies = false;
+    cookieAlert.hidden = true;
 }
 
 function accept() {
     allowCookies = true;
+    cookieAlert.hidden = true;
 }
 
 function loadCookies() {
     console.log("Attempted to load cookies");
     if (document.cookie.length != 8) {
         console.log("Invalid cookies / Nonexistant cookies");
+        cookieAlert.hidden = false;
         return;
     }
     debug = document.cookie.charAt(5) == "1" ? true : false;
