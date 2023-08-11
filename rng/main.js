@@ -19,15 +19,24 @@ let remCards = document.getElementById("remDisp");
 let showDeck = document.getElementById("showDeck");
 let rolls = [0, 0, 0, 0, 0, 0];
 
+function loadCookies() {
+    debug = document.cookie.charAt(2);
+    showdck = document.cookie.charAt(3);
+    showclr = document.cookie.charAt(4);
+    displayDeck();
+}
+
 function chngPrintLog() {
     debug = !debug;
     printLog.innerHTML = debug;
+    updateSettingsCookies();
 }
 
 function chngShowDeck() {
     showdck = !showdck;
     showColor.disabled = !showdck;
     showDeck.innerHTML = showdck;
+    updateSettingsCookies();
 }
 
 function displayDeck() {
@@ -45,6 +54,7 @@ function chngShowColor() {
     showclr = !showclr;
     showColor.innerHTML = showclr;
     displayDeck();
+    updateSettingsCookies();
 }
 
 function roll() {
@@ -231,3 +241,7 @@ function updateScroll() {
 }
 
 displayDeck();
+
+function updateSettingsCookies() {
+    document.cookie = "x=" + debug ? 1 : 0 + showdck ? 1 : 0 + showclr ? 1 : 0;
+}
