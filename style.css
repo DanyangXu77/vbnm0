@@ -167,6 +167,11 @@ li a:hover:not(#active) {
     left: 800px;
     top: 500px;
     padding: 0px 20px;
+    position: fixed;
+}
+
+.ar {
+    align-content: end;
 }
 
 .boxhrscl {
