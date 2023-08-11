@@ -24,6 +24,7 @@ function loadCookies() {
     showdck = document.cookie.charAt(3);
     showclr = document.cookie.charAt(4);
     displayDeck();
+    console.log("Attempted to load cookies");
 }
 
 function chngPrintLog() {
@@ -244,4 +245,5 @@ displayDeck();
 
 function updateSettingsCookies() {
     document.cookie = "x=" + debug ? 1 : 0 + showdck ? 1 : 0 + showclr ? 1 : 0;
+    debug_log("Updated cookies");
 }
