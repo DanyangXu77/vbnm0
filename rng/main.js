@@ -34,14 +34,15 @@ function accept() {
 
 function loadCookies() {
     console.log("Attempted to load cookies");
-    if (document.cookie.length != 8) {
+    if (!document.cookie.includes("x=")) {
         console.log("Invalid cookies / Nonexistant cookies");
         cookieAlert.hidden = false;
         return;
     }
-    debug = document.cookie.charAt(5) == "1" ? true : false;
-    showdck = document.cookie.charAt(6) == "1" ? true : false;
-    showclr = document.cookie.charAt(7) == "1" ? true : false;
+    let x = document.cookie.split("x=")[1];
+    debug = document.cookie.charAt(0) == "1" ? true : false;
+    showdck = document.cookie.charAt(1) == "1" ? true : false;
+    showclr = document.cookie.charAt(2) == "1" ? true : false;
     printLog.innerHTML = debug;
     showDeck.innerHTML = showdck;
     showColor.innerHTML = showclr;
