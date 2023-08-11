@@ -160,6 +160,15 @@ li a:hover:not(#active) {
     padding: 0px 20px;
 }
 
+#cookies {
+    background-color: #888888;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    height: 100px;
+    padding: 0px 20px;
+}
+
 .boxhrscl {
     width: 146.8px;
     background-color: #444444;

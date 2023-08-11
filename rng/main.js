@@ -1,3 +1,4 @@
+let allowCookies = false;
 let debug = false;
 
 function debug_log() {
@@ -20,10 +21,18 @@ let showDeck = document.getElementById("showDeck");
 let cover = document.getElementById("cover");
 let rolls = [0, 0, 0, 0, 0, 0];
 
+function deny() {
+    allowCookies = false;
+}
+
+function accept() {
+    allowCookies = true;
+}
+
 function loadCookies() {
     console.log("Attempted to load cookies");
     if (document.cookie.length != 8) {
-        console.log("Invalid cookies");
+        console.log("Invalid cookies / Nonexistant cookies");
         return;
     }
     debug = document.cookie.charAt(5) == "1" ? true : false;
@@ -255,6 +264,9 @@ function updateScroll() {
 displayDeck();
 
 function updateSettingsCookies() {
+    if (!allowCookies) {
+        return;
+    }
     document.cookie = "x=" + (debug ? 1 : 0) + "" + (showdck ? 1 : 0) + "" + (showclr ? 1 : 0);
     debug_log("Updated cookies");
 }
