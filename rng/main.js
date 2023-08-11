@@ -31,6 +31,7 @@ function loadCookies() {
     showDeck.innerHTML = showdck;
     showColor.innerHTML = showclr;
     if (!showdck) {
+        removePaths();
         cardDeck.hidden = true;
     }
     displayDeck();
