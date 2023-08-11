@@ -20,17 +20,20 @@ let showDeck = document.getElementById("showDeck");
 let rolls = [0, 0, 0, 0, 0, 0];
 
 function loadCookies() {
+    console.log("Attempted to load cookies");
     if (document.cookie.length != 8) {
         return;
     }
     debug = document.cookie.charAt(5) == "1" ? true : false;
     showdck = document.cookie.charAt(6) == "1" ? true : false;
     showclr = document.cookie.charAt(7) == "1" ? true : false;
-    displayDeck();
     printLog.innerHTML = debug;
     showDeck.innerHTML = showdck;
     showColor.innerHTML = showclr;
-    console.log("Attempted to load cookies");
+    if (!showdck) {
+        cardDeck.hidden = true;
+    }
+    displayDeck();
 }
 
 function chngPrintLog() {
