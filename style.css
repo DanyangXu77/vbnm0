@@ -160,10 +160,6 @@ li a:hover:not(#active) {
     padding: 0px 20px;
 }
 
-#cookiestxt {
-    right: 70px;
-}
-
 #cookies {
     background-color: #888888;
     position: fixed;
@@ -176,7 +172,7 @@ li a:hover:not(#active) {
 
 .br {
     position: fixed;
-    top: 570px;
+    bottom: 40px;
     right: 40px;
 }
 
