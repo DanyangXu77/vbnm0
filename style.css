@@ -164,10 +164,15 @@ li a:hover:not(#active) {
     background-color: #888888;
     right: 20px;
     bottom: 20px;
-    left: 600px;
+    left: 400px;
     top: 550px;
     padding: 0px 20px;
     position: fixed;
+}
+
+.br {
+    top: 570px;
+    right: 40px;
 }
 
 .ar {
