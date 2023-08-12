@@ -165,7 +165,7 @@ li a:hover:not(#active) {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    width: 500px;
+    width: 460px;
     height: 150px;
     padding: 0px 20px;
 }
@@ -185,7 +185,7 @@ li a:hover:not(#active) {
 .ba {
     position: fixed;
     bottom: 40px;
-    right: 18px;
+    right: 180px;
 }
 
 .ar {
