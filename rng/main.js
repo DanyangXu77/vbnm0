@@ -29,6 +29,7 @@ function deny() {
 
 function accept() {
     allowCookies = true;
+    updateSettingsCookies();
     cookieAlert.hidden = true;
 }
 
@@ -272,6 +273,6 @@ function updateSettingsCookies() {
     if (!allowCookies) {
         return;
     }
-    document.cookie = "x=" + (debug ? 1 : 0) + "" + (showdck ? 1 : 0) + "" + (showclr ? 1 : 0);
+    document.cookie = "x=" + (debug ? 1 : 0) + "" + (showdck ? 1 : 0) + "" + (showclr ? 1 : 0) + "" + (allowCookies ? 1 : 0);
     debug_log("Updated cookies");
 }
