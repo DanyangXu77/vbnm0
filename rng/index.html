@@ -58,24 +58,24 @@
         <br>
         <br>
         <!-- Not always shown -->
-        <button class="smbtn tr" onclick="openSettings()">S</button>
+        <button class="smbtn tr lbtn" onclick="openSettings()">S</button>
         <div class="tr" id="settings" hidden>
             <h1>Settings</h1>
             <h2>General</h2>
             <div class="option">
                 <h3 class="b">Print logs</h3>
-                <button class="btn" id="printLog" onclick="chngPrintLog()">false</button>
+                <button class="btn lbtn" id="printLog" onclick="chngPrintLog()">false</button>
             </div>
             <h2>Cards</h2>
             <div class="option">
                 <h3 class="b">Show deck</h3>
-                <button class="btn" id="showDeck" onclick="chngShowDeck()">true</button>
+                <button class="btn lbtn" id="showDeck" onclick="chngShowDeck()">true</button>
             </div>
             <div class="option">
                 <h3 class="b">Show colors</h3>
-                <button class="btn" id="showColor" onclick="chngShowColor()">false</button>
+                <button class="btn lbtn" id="showColor" onclick="chngShowColor()">false</button>
             </div>
-            <button class="smbtn tr" onclick="closeSettings()">X</button>
+            <button class="smbtn tr lbtn" onclick="closeSettings()">X</button>
         </div>
         
         <div id="cookies" hidden>
@@ -83,9 +83,9 @@
             <p id="cookiestxt">
                 This site uses cookies for storing settings, nothing else. To accept, or to not accept, that is the question.
             </p>
-            <button class="btn bd" onclick="deny()">Deny</button>
-            <button class="btn ba" onclick="accept()">Accept</button>
-            <button class="smbtn br" onclick="deny()">X</button>
+            <button class="btn bd lbtn" onclick="deny()">Deny</button>
+            <button class="btn ba lbtn" onclick="accept()">Accept</button>
+            <button class="smbtn br lbtn" onclick="deny()">X</button>
         </div>
         <script src="/rng/main.js" onload="loadCookies()"></script>
     </body>
