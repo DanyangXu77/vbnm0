@@ -165,9 +165,8 @@ li a:hover:not(#active) {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    width: 200px;
-    height: 500px;
-    width: 150px;
+    width: 500px;
+    height: 150px;
     padding: 0px 20px;
 }
 
