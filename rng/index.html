@@ -77,15 +77,18 @@
             </div>
             <button class="smbtn tr" onclick="closeSettings()">X</button>
         </div>
-
+        
         <div id="cookies" hidden>
+            <div id="cookiesbg">
+                
+            </div>
             <p id="cookiestxt">
                 This site uses cookies for storing settings, nothing else. To accept, or to not accept, that is the question.
             </p>
+            <button class="btn bd" onclick="deny()">Deny</button>
+            <button class="btn ba" onclick="accept()">Accept</button>
+            <button class="smbtn br" onclick="deny()">X</button>
         </div>
-        <button class="btn bd" onclick="deny()">Deny</button>
-        <button class="btn ba" onclick="accept()">Accept</button>
-        <button class="smbtn br" onclick="deny()">X</button>
         <script src="/rng/main.js" onload="loadCookies()"></script>
     </body>
 </html>

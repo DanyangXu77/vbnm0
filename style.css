@@ -160,6 +160,16 @@ li a:hover:not(#active) {
     padding: 0px 20px;
 }
 
+#cookiesbg {
+    background-color: #888888;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 460px;
+    height: 150px;
+    padding: 0px 20px;
+}
+
 #cookies {
     background-color: #888888;
     position: fixed;
