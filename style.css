@@ -210,3 +210,11 @@ li a:hover:not(#active) {
 .lbtn {
     background-color: #666666;
 }
+
+.nospace {
+    font-size: 0px;
+}
+
+.dfont {
+    font-size: 12px;
+}

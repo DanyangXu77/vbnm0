@@ -115,7 +115,6 @@ function reset() {
     oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
     shownCards = [];
     topCard.innerHTML = "";
-    updateScroll();
     remCards.innerHTML = "54 Remaining";
     displayDeck();
     debug_log("Reset");
@@ -157,17 +156,7 @@ function draw() {
     }
     card = cards.pop();
     shownCards.push(card);
-    if (topCard.innerHTML == "") {
-        topCard.innerHTML = cardName(card);
-        remCards.innerHTML = cards.length + " Remaining";
-        displayDeck();
-        debug_log("Drawn");
-        debug_log(card);
-        debug_log(cards);
-        return 1;
-    }
-    topCard.innerHTML += "<br>" + cardName(card);
-    updateScroll();
+    topCard.innerHTML = cardName(card);
     remCards.innerHTML = cards.length + " Remaining";
     displayDeck();
     debug_log("Drawn");
