@@ -18,24 +18,24 @@
         </div>
         <div class="pad">
             <h1>Cards</h1>
-            <p class="smbox" id="cardDisp" width="150px"></p>
-            <button class="smbtn" onclick="clearDisp()">X</button><br>
-            <p class="smbox" id="remDisp">
+            <button class="smbox btn" id="cardDisp" width="150px"></button>
+            <button class="smbtn h" onclick="clearDisp()">X</button><br>
+            <button class="smbox btn" id="remDisp">
                 54 Remaining
-            </p><br>
-            <button class="btn" onclick="shuffle()">
+            </button><br>
+            <button class="btn h" onclick="shuffle()">
                 Shuffle
             </button><br>
-            <button class="btn" onclick="draw()">
+            <button class="btn h" onclick="draw()">
                 Draw
             </button><br>
-            <button class="btn" onclick="addDeck()">
+            <button class="btn h" onclick="addDeck()">
                 Add Deck
             </button><br>
-            <button class="btn" onclick="removeDeck()">
+            <button class="btn h" onclick="removeDeck()">
                 Remove Deck
             </button><br>
-            <button class="btn" onclick="reset()">
+            <button class="btn h" onclick="reset()">
                 Reset
             </button><br>
             <div id="cover">
@@ -64,18 +64,18 @@
             <h2>General</h2>
             <div class="option">
                 <h3 class="b">Print logs</h3>
-                <button class="btn lbtn" id="printLog" onclick="chngPrintLog()">false</button>
+                <button class="btn lbtn h" id="printLog" onclick="chngPrintLog()">false</button>
             </div>
             <h2>Cards</h2>
             <div class="option">
                 <h3 class="b">Show deck</h3>
-                <button class="btn lbtn" id="showDeck" onclick="chngShowDeck()">true</button>
+                <button class="btn lbtn h" id="showDeck" onclick="chngShowDeck()">true</button>
             </div>
             <div class="option">
                 <h3 class="b">Show colors</h3>
-                <button class="btn lbtn" id="showColor" onclick="chngShowColor()">false</button>
+                <button class="btn lbtn h" id="showColor" onclick="chngShowColor()">false</button>
             </div>
-            <button class="smbtn tr lbtn" onclick="closeSettings()">X</button>
+            <button class="smbtn tr lbtn h" onclick="closeSettings()">X</button>
         </div>
         
         <div id="cookies" hidden>
@@ -83,9 +83,9 @@
             <p id="cookiestxt">
                 This site uses cookies for storing settings, nothing else. To accept, or to not accept, that is the question.
             </p>
-            <button class="btn bd lbtn" onclick="deny()">Deny</button>
-            <button class="btn ba lbtn" onclick="accept()">Accept</button>
-            <button class="smbtn br lbtn" onclick="deny()">X</button>
+            <button class="btn bd lbtn h" onclick="deny()">Deny</button>
+            <button class="btn ba lbtn h" onclick="accept()">Accept</button>
+            <button class="smbtn br lbtn h" onclick="deny()">X</button>
         </div>
         <script src="/rng/main.js" onload="loadCookies()"></script>
     </body>
