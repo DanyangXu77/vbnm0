@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VBNM</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    </head>
+    <body>
+        <ul id="nav">
+            <li><a href="/">Home</a></li>
+            <li><a id="active" href="/rng">RNG</a></li>
+            <li class="r"><a href="/contact">Contact</a></li>
+        </ul>
+        <br>
+        <div class="pad">
+            <h1>Dice</h1>
+            <img id="dice" src="/images/dice/0.png" width="150px" height="150px" onclick="roll()"/>
+        </div>
+        <div class="pad">
+            <h1>Cards</h1>
+            <span class="nospace">
+            <button class="btn dfont" id="cardDisp">&nbsp;</button>
+            <button class="smbtn h dfont" onclick="clearDisp()">X</button></span><br>
+            <button class="btn" id="remDisp">
+                54 Remaining
+            </button><br>
+            <button class="btn h" onclick="shuffle()">
+                Shuffle
+            </button><br>
+            <button class="btn h" onclick="draw()">
+                Draw
+            </button><br>
+            <button class="btn h" onclick="addDeck()">
+                Add Deck
+            </button><br>
+            <button class="btn h" onclick="removeDeck()">
+                Remove Deck
+            </button><br>
+            <button class="btn h" onclick="reset()">
+                Reset
+            </button><br>
+            <div id="cover">
+                <svg id="cardDeck" class="boxhrscl" height="56px" width="148px"></svg>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- Not always shown -->
+        <button class="smbtn tr lbtn" onclick="openSettings()">S</button>
+        <div class="tr" id="settings" hidden>
+            <h1>Settings</h1>
+            <h2>General</h2>
+            <div class="option">
+                <h3 class="b">Print logs</h3>
+                <button class="btn lbtn h" id="printLog" onclick="chngPrintLog()">false</button>
+            </div>
+            <h2>Cards</h2>
+            <div class="option">
+                <h3 class="b">Show deck</h3>
+                <button class="btn lbtn h" id="showDeck" onclick="chngShowDeck()">true</button>
+            </div>
+            <div class="option">
+                <h3 class="b">Show colors</h3>
+                <button class="btn lbtn h" id="showColor" onclick="chngShowColor()">false</button>
+            </div>
+            <button class="smbtn tr lbtn h" onclick="closeSettings()">X</button>
+        </div>
+        
+        <div id="cookies" hidden>
+            <div id="cookiesbg"></div>
+            <p id="cookiestxt">
+                This site uses cookies for storing settings, nothing else. To accept, or to not accept, that is the question.
+            </p>
+            <button class="btn bd lbtn h" onclick="deny()">Deny</button>
+            <button class="btn ba lbtn h" onclick="accept()">Accept</button>
+            <button class="smbtn br lbtn h" onclick="deny()">X</button>
+        </div>
+        <script src="/rng/main.js" onload="loadCookies()"></script>
+    </body>
+</html>
