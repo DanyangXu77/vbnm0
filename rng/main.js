@@ -40,7 +40,7 @@ function loadCookies() {
         cookieAlert.hidden = false;
         return;
     }
-    let x = document.cookie.split("x=")[1].split(";")[0];
+    let x = getCookie("x");
     debug = x.charAt(0) == "1" ? true : false;
     showdck = x.charAt(1) == "1" ? true : false;
     showclr = x.charAt(2) == "1" ? true : false;
@@ -264,4 +264,20 @@ function updateSettingsCookies() {
     }
     document.cookie = "x=" + (debug ? 1 : 0) + "" + (showdck ? 1 : 0) + "" + (showclr ? 1 : 0) + "" + (allowCookies ? 1 : 0);
     debug_log("Updated cookies");
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
