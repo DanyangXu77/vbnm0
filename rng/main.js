@@ -40,10 +40,10 @@ function loadCookies() {
         cookieAlert.hidden = false;
         return;
     }
-    let x = document.cookie.split("x=")[1];
-    debug = document.cookie.charAt(0) == "1" ? true : false;
-    showdck = document.cookie.charAt(1) == "1" ? true : false;
-    showclr = document.cookie.charAt(2) == "1" ? true : false;
+    let x = document.cookie.split("x=")[1].split(";")[0];
+    debug = x.charAt(0) == "1" ? true : false;
+    showdck = x.charAt(1) == "1" ? true : false;
+    showclr = x.charAt(2) == "1" ? true : false;
     printLog.innerHTML = debug;
     showDeck.innerHTML = showdck;
     showColor.innerHTML = showclr;
