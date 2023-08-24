@@ -233,3 +233,14 @@ li a:hover:not(#active) {
 .dfont {
     font-size: 13.33333333333333333333333333333333333px;
 }
+
+#pageblock {
+    background-color: #ff0000;
+    top: 86px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+}
