@@ -31,6 +31,17 @@ ul {
     top: 0;
     width: 100%;
 }
+
+#nav2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    position: fixed;
+    top: 43px;
+    width: 100%;
+}
   
 li {
     float: left;
@@ -58,6 +69,10 @@ li a:hover:not(#active) {
 }
   
 #active {
+    background-color: #111111;
+}
+
+#active2 {
     background-color: #111111;
 }
 
