@@ -6,7 +6,7 @@ let x = setTimeout(updateBattery, 1000);
 
 async function updateBattery() {
     if (!navigator.getBattery) {
-        document.getElementById("batteryInfo").innerHTML = "Unknown due to either a permissions policy or a being called from an insecure context.";
+        document.getElementById("batteryInfo").innerHTML = "Battery Info <br>unknown due to either a permissions policy or a being called from an insecure context.";
         clearTimeout(x);
     }
     let battery = await navigator.getBattery();
