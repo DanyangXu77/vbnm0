@@ -1,5 +1,6 @@
 document.getElementById("pageblock").hidden = true;
 document.getElementById("dispAgent").innerHTML = navigator.userAgent;
+updateBattery();
 let x = setTimeout(updateBattery, 10000);
 
 function updateBattery() {
