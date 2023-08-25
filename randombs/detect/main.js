@@ -10,7 +10,7 @@ async function updateBattery() {
         clearTimeout(x);
     }
     let battery = await navigator.getBattery();
-    document.getElementById("batteryLvl").innerHTML = "Level: " + (battery.level * 100) + "%";
+    document.getElementById("batteryLvl").innerHTML = "Level: " + Math.round((battery.level * 100)) + "%";
     document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
-    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + battery.chargingTime : "Until Empty: " + battery.dischargingTime);
+    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + battery.chargingTime : "Until Empty: " + battery.dischargingTime) + " seconds";
 }
