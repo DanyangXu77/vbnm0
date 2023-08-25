@@ -8,5 +8,9 @@ async function updateBattery() {
         document.getElementById("batteryInfo").innerHTML = "Unknown due to either a permissions policy or a being called from an insecure context.";
         clearTimeout(x);
     }
-    document.getElementById("batteryInfo").innerHTML = "Battery: " + ((await navigator.getBattery()).level) * 100 + "%";
+    document.getElementById("batteryInfo").innerHTML = "Battery: " + ((await navigator.getBattery()).level) * 100 + "%" + (isCharging() ? "(Charging)" : "");
+}
+
+async function isCharging() {
+    return (await navigator.getBattery).isCharging;
 }
