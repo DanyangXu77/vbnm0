@@ -1,16 +1,16 @@
 document.getElementById("pageblock").hidden = true;
 document.getElementById("dispAgent").innerHTML = navigator.userAgent;
 updateBattery();
-let x = setTimeout(updateBattery, 10000);
+let x = setTimeout(updateBattery, 1000);
+
 
 async function updateBattery() {
     if (!navigator.getBattery) {
         document.getElementById("batteryInfo").innerHTML = "Unknown due to either a permissions policy or a being called from an insecure context.";
         clearTimeout(x);
     }
-    document.getElementById("batteryInfo").innerHTML = "Battery: " + ((await navigator.getBattery()).level) * 100 + "%" + (isCharging() ? "(Charging)" : "");
-}
-
-async function isCharging() {
-    return (await navigator.getBattery).isCharging;
+    let battery = await navigator.getBattery();
+    document.getElementById("batteryLvl").innerHTML = "Level: " + (battery.level * 100) + "%";
+    document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
+    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + battery.chargingTime : "Until Empty: " + battery.dischargingTime);
 }
