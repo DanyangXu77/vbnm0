@@ -2,8 +2,8 @@ let allowCookies = false;
 let debug = false;
 
 let cookieAlert = document.getElementById("cookies");
-let showclr = false;
-let showdck = true;
+let showcolor = false;
+let showdeck = true;
 let printLog = document.getElementById("printLog");
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
@@ -27,11 +27,10 @@ function accept() {
 }
 
 function loadCookies() {
-    let x = getCookie("x");
-    debug = x.charAt(0) == '1' ? true : false;
-    showdck = x.charAt(1) == '1' ? true : false;
-    showclr = x.charAt(2) == '1' ? true : false;
-    debug_log(debug + ", " + showdck + ", " + showclr);
+    debug = getCookie("debug") == '1' ? true : false;
+    showdeck = getCookie("showdeck") == '1' ? true : false;
+    showcolor = getCookie("showcolor") == '1' ? true : false;
+    debug_log(debug + ", " + showdeck + ", " + showcolor);
     debug_log("Attempted to load cookies");
     if (!document.cookie.includes("x=")) {
         debug_log("Invalid cookies / Nonexistant cookies");
@@ -39,9 +38,9 @@ function loadCookies() {
         return;
     }
     printLog.innerHTML = debug;
-    showDeck.innerHTML = showdck;
-    showColor.innerHTML = showclr;
-    if (!showdck) {
+    showDeck.innerHTML = showdeck;
+    showColor.innerHTML = showcolor;
+    if (!showdeck) {
         removePaths();
     }
     displayDeck();
@@ -54,16 +53,16 @@ function chngPrintLog() {
 }
 
 function chngShowDeck() {
-    showdck = !showdck;
-    showColor.disabled = !showdck;
-    showDeck.innerHTML = showdck;
-    cover.hidden = !showdck;
+    showdeck = !showdeck;
+    showColor.disabled = !showdeck;
+    showDeck.innerHTML = showdeck;
+    cover.hidden = !showdeck;
     displayDeck();
     updateSettingsCookies();
 }
 
 function displayDeck() {
-    if (showdck) {
+    if (showdeck) {
         cover.hidden = false;
         updateDeck();
         return 1;
@@ -74,8 +73,8 @@ function displayDeck() {
 }
 
 function chngShowColor() {
-    showclr = !showclr;
-    showColor.innerHTML = showclr;
+    showcolor = !showcolor;
+    showColor.innerHTML = showcolor;
     displayDeck();
     updateSettingsCookies();
 }
@@ -228,7 +227,7 @@ function updateDeck() {
     for (let i = 0; i < cards.length; i++) {
         let newElement = document.createElementNS("http://www.w3.org/2000/svg", 'path');
         newElement.setAttribute("d","M 0 " + (cards.length - i) + " L 148 " + (cards.length - i));
-        if (showclr) {
+        if (showcolor) {
             let z1 = "";
             let z2 = "";
             if (Math.round(255 / 53 * cards[i]) < 16) {
@@ -254,7 +253,9 @@ function updateSettingsCookies() {
     if (!allowCookies) {
         return;
     }
-    document.cookie = "x=" + (debug ? 1 : 0) + "" + (showdck ? 1 : 0) + "" + (showclr ? 1 : 0) + "" + (allowCookies ? 1 : 0);
+    document.cookie = "debug=" + (debug ? '1' : '0');
+    document.cookie = "showdeck=" + (showdeck ? '1' : '0');
+    document.cookie = "showcolor=" + (showcolor ? '1' : '0');
     debug_log("Updated cookies");
     return document.cookie;
 }
