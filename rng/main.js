@@ -256,6 +256,7 @@ function updateSettingsCookies() {
     }
     document.cookie = "x=" + (debug ? 1 : 0) + "" + (showdck ? 1 : 0) + "" + (showclr ? 1 : 0) + "" + (allowCookies ? 1 : 0);
     debug_log("Updated cookies");
+    return document.cookie;
 }
 
 function getCookie(cname) {
