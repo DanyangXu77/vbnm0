@@ -1,9 +1,7 @@
 document.getElementById("pageblock").hidden = true;
 document.getElementById("dispAgent").innerHTML = navigator.userAgent;
-updateBattery();
 let x = setInterval(updateBattery, 10000);
 let updates = 0;
-
 
 async function updateBattery() {
     updates++;
@@ -17,3 +15,5 @@ async function updateBattery() {
     document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
     document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + battery.chargingTime : "Until Empty: " + battery.dischargingTime) + " seconds";
 }
+
+updateBattery();
