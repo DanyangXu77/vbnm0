@@ -1,19 +1,12 @@
 let allowCookies = false;
 let debug = false;
 
-function debug_log() {
-    if (debug) {
-        console.log.apply(this, arguments);
-    }
-}
-
 let cookieAlert = document.getElementById("cookies");
 let showclr = false;
 let showdck = true;
 let printLog = document.getElementById("printLog");
 let cards = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
 let oneDeck = Array.apply(null, Array(54)).map(function (x, i) {return 53 - i;});
-debug_log(oneDeck);
 let shownCards = [];
 let cardDeck = document.getElementById("cardDeck");
 let topCard = document.getElementById("cardDisp");
@@ -256,8 +249,6 @@ function updateScroll() {
     topCard.scrollTop = topCard.scrollHeight;
 }
 
-displayDeck();
-
 function updateSettingsCookies() {
     if (!allowCookies) {
         return;
@@ -281,3 +272,153 @@ function getCookie(cname) {
     }
     return "";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function debug_log() {
+    if (debug) {
+        console.log.apply(this, arguments);
+    }
+}
+
+displayDeck();
