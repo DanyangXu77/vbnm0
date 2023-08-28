@@ -27,16 +27,17 @@ function accept() {
 }
 
 function loadCookies() {
+    let x = getCookie("x");
+    debug = x.charAt(0) == '1' ? true : false;
+    showdck = x.charAt(1) == '1' ? true : false;
+    showclr = x.charAt(2) == '1' ? true : false;
+    debug_log(debug + ", " + showdck + ", " + showclr);
     debug_log("Attempted to load cookies");
     if (!document.cookie.includes("x=")) {
         debug_log("Invalid cookies / Nonexistant cookies");
         cookieAlert.hidden = false;
         return;
     }
-    let x = getCookie("x");
-    debug = x.charAt(0) == "1" ? true : false;
-    showdck = x.charAt(1) == "1" ? true : false;
-    showclr = x.charAt(2) == "1" ? true : false;
     printLog.innerHTML = debug;
     showDeck.innerHTML = showdck;
     showColor.innerHTML = showclr;
