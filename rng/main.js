@@ -27,9 +27,9 @@ function accept() {
 }
 
 function loadCookies() {
-    console.log("Attempted to load cookies");
+    debug_log("Attempted to load cookies");
     if (!document.cookie.includes("x=")) {
-        console.log("Invalid cookies / Nonexistant cookies");
+        debug_log("Invalid cookies / Nonexistant cookies");
         cookieAlert.hidden = false;
         return;
     }
