@@ -1,6 +1,5 @@
 document.getElementById("pageblock").hidden = true;
 document.getElementById("dispAgent").innerHTML = navigator.userAgent;
-let x = setInterval(updateBattery, 10000);
 
 function toFormat(s) {
     let h = Math.floor(s / 3600);
