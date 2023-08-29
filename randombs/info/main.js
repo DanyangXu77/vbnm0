@@ -13,7 +13,15 @@ async function updateBattery() {
     let battery = await navigator.getBattery();
     document.getElementById("batteryLvl").innerHTML = "Level: " + Math.round((battery.level * 100)) + "%";
     document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
-    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + battery.chargingTime : "Until Empty: " + battery.dischargingTime) + " seconds";
+    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + toFormat(battery.chargingTime) : "Until Empty: " + toFormat(battery.dischargingTime));
+}
+
+function toFormat(s) {
+    let h = s / 60;
+    s = s % 3600;
+    let m = s / 60;
+    s = s % 60;
+    return h + " Hours, " + m + " Minutes, " + s + " Seconds"
 }
 
 updateBattery();
