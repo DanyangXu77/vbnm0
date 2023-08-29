@@ -11,32 +11,18 @@ function toFormat(s) {
 }
 
 navigator.getBattery().then((battery) => {
-    function updateBattery() {
-        console.log("Battery Update");
-        if (!battery) {
-            clearInterval(x);
-            document.getElementById("batteryCharging").hidden = true;
-            document.getElementById("timeUntil").hidden = true;
-            document.getElementById("batteryInfo").innerHTML = "(unknown due to either a permissions policy or being called from an insecure context)";
-        }
-        document.getElementById("batteryLvl").innerHTML = "Level: " + Math.round((battery.level * 100)) + "%";
-        document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
-        document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + toFormat(battery.chargingTime) : "Until Empty: " + toFormat(battery.dischargingTime));
-    }
     battery.addEventListener("chargingchange", () => {
-        updateBattery();
+        document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
     });
     battery.addEventListener("levelchange", () => {
-        updateBattery();
+        document.getElementById("batteryLvl").innerHTML = "Level: " + Math.round((battery.level * 100)) + "%";
     });
-    battery.addEventListener("levelchange", () => {
-        updateBattery();
+    battery.addEventListener("chargingtimechange", () => {
+        document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + toFormat(battery.chargingTime) : "Until Empty: " + toFormat(battery.dischargingTime));
     });
-    battery.addEventListener("levelchange", () => {
-        updateBattery();
+    battery.addEventListener("dischargingtimechange", () => {
+        document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + toFormat(battery.chargingTime) : "Until Empty: " + toFormat(battery.dischargingTime));
     });
-
-    updateBattery();
 });
 
 navigator.connection.addEventListener('change', function(network) {
