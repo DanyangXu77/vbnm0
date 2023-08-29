@@ -257,7 +257,6 @@ function updateSettingsCookies() {
     document.cookie = "showdeck=" + (showdeck ? '1' : '0');
     document.cookie = "showcolor=" + (showcolor ? '1' : '0');
     debug_log("Updated cookies");
-    return document.cookie;
 }
 
 function getCookie(cname) {
@@ -275,9 +274,6 @@ function getCookie(cname) {
     }
     return "";
 }
-
-
-
 
 
 
