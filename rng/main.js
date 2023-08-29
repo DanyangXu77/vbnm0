@@ -30,7 +30,6 @@ function loadCookies() {
     debug = getCookie("debug") == '1' ? true : false;
     showdeck = getCookie("showdeck") == '1' ? true : false;
     showcolor = getCookie("showcolor") == '1' ? true : false;
-    debug_log(debug + ", " + showdeck + ", " + showcolor);
     debug_log("Attempted to load cookies");
     if (!document.cookie.includes("debug") || !document.cookie.includes("showdeck") || !document.cookie.includes("showcolor")) {
         debug_log("Invalid cookies / Nonexistant cookies");
