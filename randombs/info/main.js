@@ -9,7 +9,7 @@ function toFormat(s) {
     return h + " Hours, " + m + " Minutes, " + s + " Seconds"
 }
 
-network = navigator.connection;
+let network = navigator.connection;
 document.getElementById("bandwidth") = "Bandwidth: " + network.downlink + " Kbps";
 document.getElementById("maxBandwidth") = "Max Bandwidth: " + network.downlinkMax + " Mbps";
 document.getElementById("effectiveType") = "Effective Type: " + network.effectiveType;
