@@ -9,7 +9,20 @@ function toFormat(s) {
     return h + " Hours, " + m + " Minutes, " + s + " Seconds"
 }
 
+network = navigator.connection;
+document.getElementById("bandwidth") = "Bandwidth: " + network.downlink + " Kbps";
+document.getElementById("maxBandwidth") = "Max Bandwidth: " + network.downlinkMax + " Mbps";
+document.getElementById("effectiveType") = "Effective Type: " + network.effectiveType;
+document.getElementById("roundTripTime") = "Round Trip Time:" + network.rtt + " Milliseconds";
+document.getElementById("connectionType") = "Connection Type: " + network.type.charAt(0).toUpperCase() + network.type.splice(1);
+
 navigator.getBattery().then((battery) => {
+    console.log("Battery Obtained");
+    document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
+    document.getElementById("batteryLvl").innerHTML = "Level: " + Math.round((battery.level * 100)) + "%";
+    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + toFormat(battery.chargingTime) : "Until Empty: " + toFormat(battery.dischargingTime));
+    document.getElementById("timeUntil").innerHTML = (battery.charging ? "Until Full: " + toFormat(battery.chargingTime) : "Until Empty: " + toFormat(battery.dischargingTime));
+
     battery.addEventListener("chargingchange", () => {
         document.getElementById("batteryCharging").innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
     });
