@@ -30,10 +30,14 @@ navigator.getBattery().then((battery) => {
         document.getElementById("batteryLvl").innerHTML = "Level: " + (battery.level == undefined ? "Unknown" : Math.round((battery.level * 100)) + "%");
     });
     battery.addEventListener("chargingtimechange", () => {
-        document.getElementById("timeUntil").innerHTML = "Until Full: " + (battery.chargingTime == undefined ? "Unknown" : toFormat(battery.chargingTime));
+        if (battery.charging) {
+            document.getElementById("timeUntil").innerHTML = "Until Full: " + (battery.chargingTime == undefined ? "Unknown" : toFormat(battery.chargingTime));
+        }
     });
     battery.addEventListener("dischargingtimechange", () => {
-        document.getElementById("timeUntil").innerHTML = "Until Empty: " + (battery.dischargingTime == undefined ? "Unknown" : toFormat(battery.dischargingTime));
+        if (!battery.charging) {
+            document.getElementById("timeUntil").innerHTML = "Until Empty: " + (battery.dischargingTime == undefined ? "Unknown" : toFormat(battery.dischargingTime));
+        }
     });
 });
 
