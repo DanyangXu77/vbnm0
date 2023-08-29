@@ -17,9 +17,9 @@ async function updateBattery() {
 }
 
 function toFormat(s) {
-    let h = s / 60;
+    let h = Math.floor(s / 3600);
     s = s % 3600;
-    let m = s / 60;
+    let m = Math.floor(s / 60);
     s = s % 60;
     return h + " Hours, " + m + " Minutes, " + s + " Seconds"
 }
