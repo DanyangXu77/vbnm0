@@ -33,10 +33,10 @@
 		}
 		aiptag.cmd.player.push(function() {
 			aiptag.adplayer = new aipPlayer({
-				AD_WIDTH: 960,
-				AD_HEIGHT: 540,
-				AD_DISPLAY: 'fullscreen', //default, fullscreen, center, fill
-				LOADING_TEXT: 'loading advertisement',
+				AD_WIDTH: 0,
+				AD_HEIGHT: 0,
+				AD_DISPLAY: 'nonr', //default, fullscreen, center, fill
+				LOADING_TEXT: 'not loading advertisement',
 				PREROLL_ELEM: function(){return document.getElementById('preroll')},
 				AIP_STARTED: function ()  {
 					winteradStarted();
@@ -51,7 +51,7 @@
 					winteradError();
 				},
 				AIP_BLOCKED: function ()  {
-					winteradError();
+					winteradFinished();
 				},
 				AIP_ADBREAK_COMPLETE: function ()  {
 					winteradFinished();
@@ -59,36 +59,12 @@
 			});	
 		});
 	
-		var ad_is_first = true;
+		var ad_is_first = false;
 		function show_preroll() {
-			//check if the adslib is loaded correctly or blocked by adblockers etc.
-			if (typeof aiptag.adplayer !== 'undefined') {
-				if(ad_is_first) {
-					ad_is_first = false;
-					aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
-				}
-				else {
-					// use preroll for everything rn
-					//aiptag.cmd.player.push(function() { aiptag.adplayer.startAdBreak(); });
-					aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
-				}
-			} else {
-				//Adlib didnt load this could be due to an adblocker, timeout etc.
-				//Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE.
-				winteradError();
-			}
+			winteradFinished();
 		}
 		function show_rewarded() {
-			//check if the adslib is loaded correctly or blocked by adblockers etc.
-			if (typeof aiptag.adplayer !== 'undefined') {
-				// use preroll for everything rn
-				//aiptag.cmd.player.push(function() { aiptag.adplayer.startRewardedAd(); });
-				aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
-			} else {
-				//Adlib didnt load this could be due to an adblocker, timeout etc.
-				//Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE.
-				winteradError();
-			}
+			winteradFinished();
 		}
 		function request_banner() {
 			aiptag.cmd.display.push(function() { aipDisplayTag.display('winterpixel-com_728x90'); });
@@ -96,7 +72,6 @@
 
 	</script>
 	<script async src="//api.adinplay.com/libs/aiptag/pub/WPX/winterpixel.com/tag.min.js"></script>
-	<script type="text/javascript" src="winterpixelads.js"></script>
 	<script type="text/javascript" src="screenfull.js"></script>
 	<script src="/paystation.js"></script>
 	<style type='text/css'>
