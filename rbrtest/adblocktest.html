@@ -262,7 +262,6 @@
 		</div>
 	</div>
 	<div id="winterpixel-fullscreen-container" style="pointer-events:none; width: 100%; height: 100%; position: absolute;">
-		<div id="preroll" style="pointer-events:auto; display: none;"></div>
 		<div id="winterpixel-banner-container" style="width: 100%; height: 16%; position: absolute; bottom: 1px; display:none;">
 			<div id='winterpixel-com_728x90' style="pointer-events:auto; width: 728px; height: 90px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			</div>
@@ -408,18 +407,6 @@
 			return "http://play.google.com/store/apps/details?id=com.winterpixel.rocketbotroyale&hl=en";
 		};
 
-		function getAdDriver() {
-			var adDriver = "adinplay"; // test local dev with crazygames
-			var referrer = document.referrer.toLowerCase();
-			if(referrer.indexOf("crazygames") != -1 || referrer.indexOf("onlinegame") != -1 || referrer.indexOf("speelspelletjes") != -1 || referrer.indexOf("1001juegos") != -1) {
-				adDriver = "crazygames";
-			}
-			else if(referrer.indexOf("poki") != -1 || referrer.indexOf("po.ki") != -1) {
-				adDriver = "poki";
-			}
-			return adDriver;
-		};
-
 		function xsollaOpenPaystationNewWindow(access_token_string, sandbox_flag, product_id_string) {
 			var url = "https://secure.xsolla.com/paystation3/?access_token=" + access_token_string
 			if(sandbox_flag) {
@@ -493,28 +480,10 @@
 			temp.innerHTML = html;
 			return temp.content.firstChild;
 		}
-		
-		const winterpixeladsdk = window.WinterpixelAds;
-		
-		function wintersdkInitialized(event) {
-			console.log("wintersdkInitialized");
-			const userInfo = event.userInfo;
-			console.log(userInfo);
-		};
-		function adblockDetection(event) {
-    		if(event.hasAdblock) {
-				console.log('User is using an adblocker');
-    		} else {
-				console.log('User is not using an adblocker');
-    		}
-		};
+
 		function winteradStarted() {
 			console.log("winteradStarted");
 			window['winterpixelAdHandlers'].callbackMap.adStarted();
-		};
-		function winteradError() {
-			console.log("winteradError");
-			window['winterpixelAdHandlers'].callbackMap.adError();
 		};
 		function winteradFinished() {
 			console.log("winteradFinished");
@@ -630,11 +599,9 @@
 		// \-----------------------------------
 		window.onload = function() {
 			winterpixeladsdk.init({}, {}, getAdDriver());
-			winterpixeladsdk.addEventListener('adblockDetectionExecuted', adblockDetection);
 			winterpixeladsdk.addEventListener('initialized', wintersdkInitialized);
 			winterpixeladsdk.addEventListener('adStarted', winteradStarted);
 			winterpixeladsdk.addEventListener('adFinished', winteradFinished); 
-			winterpixeladsdk.addEventListener('adError', winteradError); 
 			if(winterpixelIsAndroid()) {
 				document.getElementById('canvas').addEventListener('touchstart', () => {
 					winterpixelGoFullscreen();
