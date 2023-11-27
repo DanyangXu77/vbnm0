@@ -13,6 +13,13 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.setup();
 }
 
+function chngspd() {
+  let r = document.querySelector(":root");
+  let res = prompt("Set Speed Multiplier to: (current = " + getComputedStyle(r).getPropertyValue("slow-speed") + ")");
+  res = parseInt(res);
+  r.style.setProperty("slow-speed", res);
+}
+
 // Restart the game
 GameManager.prototype.restart = function () {
   this.storageManager.clearGameState();
