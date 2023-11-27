@@ -15,9 +15,9 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 function chngspd() {
   let r = document.querySelector(":root");
-  let res = prompt("Set Speed Multiplier to: (current = " + getComputedStyle(r).getPropertyValue("slow-speed") + ")");
+  let res = prompt("Set Speed Multiplier to: (current = " + getComputedStyle(r).getPropertyValue("--slow-speed") + ")");
   res = parseInt(res);
-  r.style.setProperty("slow-speed", res);
+  r.style.setProperty("--slow-speed", res);
 }
 
 // Restart the game
