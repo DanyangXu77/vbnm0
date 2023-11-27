@@ -1,3 +1,6 @@
+:root {
+  --slow-speed: 12;
+}
 @import url(fonts/clear-sans.css);
 html, body {
   margin: 0;
@@ -82,9 +85,9 @@ h1.title {
     font-weight: bold;
     color: rgba(119, 110, 101, 0.9);
     z-index: 100;
-    -webkit-animation: move-up 14400ms ease-in;
-    -moz-animation: move-up 14400ms ease-in;
-    animation: move-up 14400ms ease-in;
+    -webkit-animation: move-up calc(1200ms * var(slow-speed)) ease-in;
+    -moz-animation: move-up calc(1200ms * var(slow-speed)) ease-in;
+    animation: move-up calc(1200ms * var(slow-speed)) ease-in;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
@@ -166,9 +169,9 @@ hr {
     background: rgba(238, 228, 218, 0.5);
     z-index: 100;
     text-align: center;
-    -webkit-animation: fade-in 9600ms ease 14400ms;
-    -moz-animation: fade-in 9600ms ease 14400ms;
-    animation: fade-in 9600ms ease 14400ms;
+    -webkit-animation: fade-in calc(800ms * var(slow-speed)) ease calc(1200ms * var(slow-speed));
+    -moz-animation: fade-in calc(800ms * var(slow-speed)) ease calc(1200ms * var(slow-speed));
+    animation: fade-in calc(800ms * var(slow-speed)) ease calc(1200ms * var(slow-speed));
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
@@ -315,9 +318,9 @@ hr {
 
 .tile {
   position: absolute;
-  -webkit-transition: 1200ms ease-in-out;
-  -moz-transition: 1200ms ease-in-out;
-  transition: 1200ms ease-in-out;
+  -webkit-transition: calc(100ms * var(slow-speed)) ease-in-out;
+  -moz-transition: calc(100ms * var(slow-speed)) ease-in-out;
+  transition: calc(100ms * var(slow-speed)) ease-in-out;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform; }
@@ -437,9 +440,9 @@ hr {
     -ms-transform: scale(1);
     transform: scale(1); } }
 .tile-new .tile-inner {
-  -webkit-animation: appear 2400ms ease 1200ms;
-  -moz-animation: appear 2400ms ease 1200ms;
-  animation: appear 2400ms ease 1200ms;
+  -webkit-animation: appear calc(200ms * var(slow-speed)) ease calc(100ms * var(slow-speed));
+  -moz-animation: appear calc(200ms * var(slow-speed)) ease calc(100ms * var(slow-speed));
+  animation: appear calc(200ms * var(slow-speed)) ease calc(100ms * var(slow-speed));
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
@@ -500,9 +503,9 @@ hr {
     transform: scale(1); } }
 .tile-merged .tile-inner {
   z-index: 20;
-  -webkit-animation: pop 2400ms ease 1200ms;
-  -moz-animation: pop 2400ms ease 1200ms;
-  animation: pop 2400ms ease 1200ms;
+  -webkit-animation: pop calc(200ms * var(slow-speed)) ease calc(100ms * var(slow-speed));
+  -moz-animation: pop calc(200ms * var(slow-speed)) ease calc(100ms * var(slow-speed));
+  animation: pop calc(200ms * var(slow-speed)) ease calc(100ms * var(slow-speed));
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
@@ -599,9 +602,9 @@ hr {
       background: rgba(238, 228, 218, 0.5);
       z-index: 100;
       text-align: center;
-      -webkit-animation: fade-in 9600ms ease 14400ms;
-      -moz-animation: fade-in 9600ms ease 14400ms;
-      animation: fade-in 9600ms ease 14400ms;
+      -webkit-animation: fade-in calc(800ms * var(slow-speed)) ease calc(1200ms * var(slow-speed));
+      -moz-animation: fade-in calc(800ms * var(slow-speed)) ease calc(1200ms * var(slow-speed));
+      animation: fade-in calc(800ms * var(slow-speed)) ease calc(1200ms * var(slow-speed));
       -webkit-animation-fill-mode: both;
       -moz-animation-fill-mode: both;
       animation-fill-mode: both; }
