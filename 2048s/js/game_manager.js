@@ -13,6 +13,16 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.setup();
 }
 
+document.addEventListener("keydown", (event) => {
+  if (event.key == 's') {
+    document.getElementById('chngspd').hidden = false;
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  document.getElementById('chngspd').hidden = true;
+});
+
 function chngspd() {
   let r = document.querySelector(":root");
   let res = prompt("Set Speed Multiplier to: (current = " + getComputedStyle(r).getPropertyValue("--slow-speed") + ")");
