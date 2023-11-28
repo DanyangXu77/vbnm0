@@ -14,7 +14,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 }
 
 document.addEventListener("keydown", (event) => {
-  if (event.keyCode == 'l') {
+  if (event.keyCode == 'm') {
     document.getElementById('chngspd').hidden = false;
   }
 });
@@ -26,6 +26,7 @@ document.addEventListener("keyup", (event) => {
 function chngspd() {
   let r = document.querySelector(":root");
   let res = prompt("Set Speed Multiplier to: (current = " + getComputedStyle(r).getPropertyValue("--slow-speed") + ")");
+  if (res == "") return;
   res = parseFloat(res);
   r.style.setProperty("--slow-speed", res);
 }
