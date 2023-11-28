@@ -30,6 +30,7 @@ function chngspd() {
   if (res == "") return;
   res = parseFloat(res);
   r.style.setProperty("--slow-speed", res);
+  wait(300 * res);
 }
 
 // Restart the game
