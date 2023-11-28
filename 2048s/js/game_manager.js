@@ -1,5 +1,3 @@
-alert("xooks");
-
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;
@@ -17,8 +15,9 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 document.addEventListener("keydown", (event) => {
   if (event.key == 'm') {
-    alert("sus");
     document.getElementById('chngspd').hidden = false;
+  } else {
+    document.getElementById('chngspd').hidden = true;
   }
 });
 
