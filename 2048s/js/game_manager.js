@@ -14,7 +14,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 }
 
 document.addEventListener("keydown", (event) => {
-  if (event.keyCode == 's') {
+  if (event.keyCode == 'l') {
     document.getElementById('chngspd').hidden = false;
   }
 });
