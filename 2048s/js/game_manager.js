@@ -1,3 +1,5 @@
+document.getElementById('chngspd').style = "visibility: hidden;";
+
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;
@@ -15,14 +17,14 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 document.addEventListener("keydown", (event) => {
   if (event.key == 'm') {
-    document.getElementById('chngspd').hidden = false;
+    document.getElementById('chngspd').style = "visibility: visible;";
   } else {
-    document.getElementById('chngspd').hidden = true;
+    document.getElementById('chngspd').style = "visibility: hidden;";
   }
 });
 
 document.addEventListener("keyup", (event) => {
-  document.getElementById('chngspd').hidden = true;
+  document.getElementById('chngspd').style = "visibility: hidden;";
 });
 
 function chngspd() {
