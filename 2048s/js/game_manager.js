@@ -1,5 +1,9 @@
 document.getElementById('chngspd').style = "visibility: hidden;";
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;
@@ -31,7 +35,7 @@ function chngspd() {
   if (res == "") return;
   res = parseFloat(res);
   r.style.setProperty("--slow-speed", res);
-  wait(300 * res);
+  sleep(300 * res);
 }
 
 // Restart the game
