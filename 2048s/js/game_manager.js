@@ -1,4 +1,3 @@
-alert("a");
 document.getElementById('chngspd').style = "visibility: hidden;";
 
 function GameManager(size, InputManager, Actuator, StorageManager) {
