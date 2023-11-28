@@ -18,8 +18,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 document.addEventListener("keydown", (event) => {
   if (event.key == 'm') {
     document.getElementById('chngspd').style = "visibility: visible;";
-  } else {
-    document.getElementById('chngspd').style = "visibility: hidden;";
+  } else if (event.key == "=") {
+    score += 2048;
   }
 });
 
