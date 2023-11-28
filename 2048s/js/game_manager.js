@@ -19,7 +19,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key == 'm') {
     document.getElementById('chngspd').style = "visibility: visible;";
   } else if (event.key == "=") {
-    score = prompt("Set Score To:");
+    GameManager.score = prompt("Set Score To:");
   }
 });
 
