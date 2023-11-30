@@ -1,5 +1,5 @@
 :root {
-  --slow-speed: 30;
+  --slow-speed: 1;
 }
 
 @import url(fonts/clear-sans.css);
